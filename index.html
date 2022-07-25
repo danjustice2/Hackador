@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SPØRGSMÅLSKORT</title>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+                color: black;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                text-align: center;
+            }
+
+            body {
+
+                background-color: #1b3b85;
+            }
+
+            .size-down {
+                animation: size-down 1500ms;
+            }
+
+            .draw {
+                padding: 20px;
+                background: #00206b;
+                text-shadow: 0 0 10px #000;
+                border-style: none;
+                box-shadow: 0 -1px 8px 2px #000;
+                font-size: 20px;
+                position: absolute;
+                margin: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 200px;
+                color: #ebebeb;
+            }
+
+            #question {
+                margin: 10px;
+                padding: 10px;
+                background-color: #f2f2f2;
+                font-size: 14px;
+                line-height: 20px;
+                border-radius: 1px;
+            }
+
+            button  {
+                color: black;
+                padding: 5px;
+                margin-left: 16px;
+                margin-right: 16px;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                background-color: silver;
+                border: none;
+            }
+
+            .text-box {
+                padding: 10px;
+                margin: 5px;
+                background-color: silver;
+                border: none;
+            }
+
+            p {
+                /*Placeholder*/
+            }
+
+            h1 {
+                margin-bottom: 4px;
+                font-size: 24px;
+            }
+
+            #reply {
+                margin-top: 14px;
+            }
+
+            .text-box,
+            button {
+                box-shadow: 0 2px 8px #000;
+            }
+
+            @keyframes size-down {
+                0% {height: 200px;}
+                100% {height: 100px;}
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+            
+
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript">
+            var lower = 1;
+            var isStarted = false;
+            var id;
+            var response1correct;
+            var response2correct;
+            var response1reply;
+            var response2reply;
+            var selected = false;
+                
+            $( document ).ready(function() {
+                $('#question').hide();
+                $('#reply').hide();
+                //console.log("Hid question element");
+
+            });
+
+            function question(){
+                
+                //console.log("Calling question()");
+                path = "questions.xml"
+                
+                $.ajax({
+                    type: "GET",
+                    url: path,
+                    dataType: "xml",
+                    success: xmlParser});
+                
+            };
+
+            var rand = (function rand() {
+                var randnum = Math.floor(Math.random()*(upper-lower))+lower
+                return randnum;
+                console.log("Getting random number " + randnum)
+            });
+
+
+
+            function xmlParser(xml) {
+                
+                //console.log("starting xmlParser")
+                xmlDoc = $.parseXML( xmlToString(xml) );
+                $xml = $(xmlDoc),
+
+                upper = ($(xml).find("question").length +1);
+
+                if(isStarted == false) {
+                    $(isStarted = true);
+                    $('#question').show();
+                    $('#draw').text('Nyt spørgsmål');
+                    $('#draw').height('100px');
+                    id = rand();
+                }
+                else {
+                    do {
+                        newID = rand();
+                    }
+                    while (newID == id);
+                    id = newID;
+                    selected = false;
+                    $("#response1").css("background-color","silver");
+                    $("#response2").css("background-color","silver");
+                    $("#reply-text").text("");
+                    $("#correct-header").text("");
+                    $("#reply").hide();
+                }
+                $question = $xml.find('question[id="' + id + '"]')
+
+                $bodytext = $question.find("body-text");
+                $response1 = $question.find("text");
+                $response2 = $question.find("response2").find("text");
+                response1correct = $question.find("response1").attr("correct");
+                response2correct = $question.find("response2").attr("correct");
+                response1reply = $question.find("response1").find("reply");
+                response2reply = $question.find("response2").find("reply");
+
+                $("#body-text").text($bodytext.text());
+                $("#response1").text($response1.text());
+                $("#response2").text($response2.text());
+
+            }
+
+
+            var response = (function response(id){
+                var responsevalue
+                if (!selected){ // Only execute if the user hasn't already selected an answer to this question.
+
+                // Check the response id. This should either be 1 or 2.
+                if (id == 1) {responsevalue = "response1"; correct = response1correct; reply = response1reply;}
+                else if (id == 2) {responsevalue = "response2"; correct = response2correct; reply = response2reply;}
+                else {console.error("Invalid value for id: " +id);}
+
+                selected = true; // Indicate that the user has selected so they can't select again
+
+                $('#reply').show();
+                $("#reply-text").text(reply.text());
+
+                // Set the button either to red or green depending on correctness
+                if (correct == "false"){ 
+                    $('#' +responsevalue).css("background-color","red");
+                    $('#correct-header').text("Forkert");
+                }
+                else if (correct == "true") {
+                    $('#' +responsevalue).css("background-color","#36ff40");
+                    $('#correct-header').text("Korrekt");
+                }
+                else {console.error("Invalid value for " +responsevalue+ ": " +correct);}
+            }
+            })
+
+            function response1() {
+                response(1);
+            }
+
+            function response2() {
+                response(2);
+            }
+
+            function xmlToString(xmlData) { 
+
+                var xmlString;
+                //IE
+                if (window.ActiveXObject){
+                    xmlString = xmlData.xml;
+                }
+                // code for Mozilla, Firefox, Opera, etc.
+                else{
+                    xmlString = (new XMLSerializer()).serializeToString(xmlData);
+                }
+                return xmlString;
+            }   
+        </script>
+    </head>
+    <body>
+        <main>
+            <div id="question">
+                <p id="body-text" class="text-box"></p>
+                <div class="response-container">
+                    <button class="response" id="response1" onclick="response1()"></button>
+                    <button class="response" id="response2" onclick="response2()"></button>
+                </div>
+                <div class="text-box" id="reply">
+                    <h1 id="correct-header"></h1>
+                    <p id="reply-text" class="body-text"></p>
+            </div>
+            </div>
+            <div class="button-container"><button class="off draw" id="draw" onclick="question()">Træk spørgsmål</button></div>
+        </main>
+    </body>
+</html>
