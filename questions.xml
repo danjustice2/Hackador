@@ -29,24 +29,33 @@
     </question>
 
     <question id="3">
-        <body-text>Du arbejder som bogholder og er informeret om, at I har et samarbejde i gang med en design virksomhed, og bogholderiet afventer en faktura på første halvdel af betalingen. I modtager en mail fra virksomheden om, at I kan få 10% rabat, hvis I betaler hele beløbet forude. Mailadressen er korrekt. Hvad gør du? </body-text>
+        <body-text>Din leverandør sender en mail og skriver, at de har fået en ny bank, som de beder dig bruge fremover. Hvad gør du?</body-text>
         <responses>
-            <response1 correct="true">
-                <text>Jeg ringer til design virksomheden og får rabatten bekræftet. </text>
-                <reply>Designvirksomhedens e-mail kan være hacket, og beløbsmodtageren kan i dette tilfælde være hackeren.</reply>
+            <response1 correct="false">
+                <text>Sender mailen videre til økonomiafdelingen.</text>
+                <reply>Da der er tale om en rimelig vigtig ændring i data anbefales det, at man kontakter vedkommende personligt (eksempelvis ved at ringe) for at bekræfte ændringen.</reply>
             </response1>
-            <response2 correct="false">
-                <text>Jeg konsulterer med direktionen og betaler, hvis direktionen godkender.</text>
-                <reply>Hvis ikke der foreligger sådan en aftale, så ring til designvirksomheden og få det bekræftet. Deres mail kan være hacket.</reply>
+            <response2 correct="true">
+                <text>Ringer til leverandøren for at tjekke, om det er rigtigt.</text>
+                <reply>Da der er tale om en rimelig vigtig ændring i data anbefales det, at man kontakter vedkommende personligt (eksempelvis ved at ringe) for at bekræfte ændringen.</reply>
             </response2>
             <response3 correct="false">
-                <text>Jeg konsulterer med direktionen og betaler, hvis direktionen godkender.</text>
-                <reply>Hvis ikke der foreligger sådan en aftale, så ring til designvirksomheden og få det bekræftet. Deres mail kan være hacket.</reply>
+                <text>Send en mail til leverandøren for at bekræfte, at bankskiftet er ægte.</text>
+                <reply>Det er rigtigt nok, at man skal forsøge at kontakte leverandøren for at bekræfte ændringen. I fald mailadressen er blevet hacket e.l. har man dog ingen forsikring om, at mailen ikke bliver modtaget af en uvedkommende.</reply>
             </response3>
-            <response4 correct="false">
-                <text>Jeg konsulterer med direktionen og betaler, hvis direktionen godkender.</text>
-                <reply>Hvis ikke der foreligger sådan en aftale, så ring til designvirksomheden og få det bekræftet. Deres mail kan være hacket.</reply>
-            </response4>
+        </responses>
+    </question>
+    <question id="4">
+        <body-text>Hvilket af følgende links kan være farlige?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>https://www.facebook.com/</text>
+                <reply>Linket https://www.facebook.com/ er den almindelige adresse til Facebooks hjemmeside. Det kan man bl.a. se ved at der står https foran i stedet for kun http. S'et i HTTPS står for 'secure', hvilket betyder, at forbindelsen er krypteret og at serveren på den anden side er valideret af et certifikat.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>http://www.facebook.com/</text>
+                <reply>Facebook bruger almindeligvis HTTPS, og ikke blot HTTP. S'et i HTTPS står for 'secure', hvilket betyder, at forbindelsen er krypteret og at serveren på den anden side er valideret af et certifikat. Hvis en uvedkommende forsøger at omdirigere din trafik til en anden server vil de ikke kunne forsyne din browser med et gyldigt certifikat, hvilket resulterer i, at du får en advarsel på skærmen.</reply>
+            </response2>
         </responses>
     </question>
 </xml>
