@@ -3,91 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SPØRGSMÅLSKORT</title>
+        <title>Spørgsmålskort - Hackador</title>
         <style>
-        /*    * {
-                margin: 0px;
-                padding: 0px;
-                color: black;
-                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                text-align: center;
-            }
-
-            body {
-
-                background-image: url('assets/bg_mobile.png');
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-
-            .size-down {
-                animation: size-down 1500ms;
-            }
-
-            .pick {
-                padding: 20px;
-                background: #00206b;
-                text-shadow: 0 0 10px #000;
-                border-style: none;
-                box-shadow: 0 -1px 8px 2px #000;
-                font-size: 20px;
-                height: 200px;
-                position: absolute;
-                color: #ebebeb;
-                width: 100%;
-            }
-
-            #question {
-                margin: 10px;
-                padding: 10px;
-                background-color: #f2f2f2;
-                font-size: 14px;
-                line-height: 20px;
-                border-radius: 1px;
-            }
-
-            button  {
-                color: black;
-                padding: 5px;
-                margin-left: 16px;
-                margin-right: 16px;
-                margin-top: 8px;
-                margin-bottom: 8px;
-                background-color: silver;
-                border: none;
-            }
-
-            .text-box {
-                padding: 10px;
-                margin: 5px;
-                background-color: silver;
-                border: none;
-            }
-
-            h1 {
-                margin-bottom: 4px;
-                font-size: 24px;
-            }
-
-            #reply {
-                margin-top: 14px;
-            }
-
-            .text-box,
-            button {
-                box-shadow: 0 2px 8px #000;
-            }
-
-            @keyframes size-down {
-                0% {height: 200px;}
-                100% {height: 100px;}
-            }
-
-            button:hover {
-                cursor: pointer;
-            }*/
 
         * {
             color: #B0B0B8;
@@ -114,6 +31,7 @@
             padding-right: 20px;
             padding-top: 16px;
             padding-bottom: 16px;
+            width: 100%;
 
             border-radius: 5px;
 
@@ -177,144 +95,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="script.js"></script>
-        <script type="text/javascript">
-            var lower = 1;
-            var isStarted = false;
-            var id;
-            var response1correct;
-            var response2correct;
-            var response1reply;
-            var response2reply;
-            var selected = false;
-            var defaultButton = "#212227";
-            var wrongColor = "red";
-            var rightColor = "#36ff40";
-                
-            $( document ).ready(function() {
-                /*$('#question').hide();
-                $('#reply').hide();*/
-                //console.log("Hid question element");
-                question();
-                buttonColor("#response1", defaultButton);
-                buttonColor("#response2", defaultButton);
-                buttonColor("#pick", defaultButton);
-            });
-
-            function question(){
-                
-                path = "questions.xml"
-                
-                $.ajax({
-                    type: "GET",
-                    url: path,
-                    dataType: "xml",
-                    success: xmlParser});
-                
-            };
-
-            var rand = (function rand() {
-                var randnum = Math.floor(Math.random()*(upper-lower))+lower
-                return randnum;
-                console.log("Getting random number " + randnum)
-            });
-
-            function buttonColor(button, color) {
-                $(button).css("background-color",color);
-                
-            }
-
-
-            function xmlParser(xml) {
-                
-                //console.log("starting xmlParser")
-                xmlDoc = $.parseXML( xmlToString(xml) );
-                $xml = $(xmlDoc),
-
-                upper = ($(xml).find("question").length +1);
-
-                if(isStarted == false) {
-                    $(isStarted = true);
-                    id = rand();
-                }
-                else {
-                    do {
-                        newID = rand();
-                    }
-                    while (newID == id);
-                    id = newID;
-                    selected = false;
-                    buttonColor("#response1", defaultButton);
-                    buttonColor("#response2", defaultButton);
-                    $("#reply-text").text("");
-                    $("#correct-header").text("");
-                    $("#reply").hide();
-                }
-                $question = $xml.find('question[id="' + id + '"]')
-
-                $bodytext = $question.find("body-text");
-                $response1 = $question.find("text");
-                $response2 = $question.find("response2").find("text");
-                response1correct = $question.find("response1").attr("correct");
-                response2correct = $question.find("response2").attr("correct");
-                response1reply = $question.find("response1").find("reply");
-                response2reply = $question.find("response2").find("reply");
-
-                $("#body-text").text($bodytext.text());
-                $("#response1").text($response1.text());
-                $("#response2").text($response2.text());
-
-            }
-
-
-            var response = (function response(id){
-                var responsevalue
-                if (!selected){ // Only execute if the user hasn't already selected an answer to this question.
-
-                // Check the response id. This should either be 1 or 2.
-                if (id == 1) {responsevalue = "response1"; correct = response1correct; reply = response1reply;}
-                else if (id == 2) {responsevalue = "response2"; correct = response2correct; reply = response2reply;}
-                else {console.error("Invalid value for id: " +id);}
-
-                selected = true; // Indicate that the user has selected so they can't select again
-
-                $('#reply').show();
-                $("#reply-text").text(reply.text());
-
-                // Set the button either to red or green depending on correctness
-                if (correct == "false"){ 
-                    buttonColor('#' +responsevalue, wrongColor);
-                    $('#correct-header').text("Forkert");
-                }
-                else if (correct == "true") {
-                    buttonColor('#' +responsevalue, rightColor);
-                    $('#correct-header').text("Korrekt");
-                }
-                else {console.error("Invalid value for " +responsevalue+ ": " +correct);}
-            }
-            })
-
-            function response1() {
-                response(1);
-            }
-
-            function response2() {
-                response(2);
-            }
-
-            function xmlToString(xmlData) { 
-
-                var xmlString;
-                //IE
-                if (window.ActiveXObject){
-                    xmlString = xmlData.xml;
-                }
-                // code for Mozilla, Firefox, Opera, etc.
-                else{
-                    xmlString = (new XMLSerializer()).serializeToString(xmlData);
-                }
-                return xmlString;
-            }   
-        </script>
     </head>
     <body>
         <main>
@@ -324,6 +104,8 @@
                 <div class="response-container">
                     <button class="response" id="response1" onclick="response1()"></button>
                     <button class="response" id="response2" onclick="response2()"></button>
+                    <button class="response" id="response3" onclick="response3()"></button>
+                    <button class="response" id="response4" onclick="response3()"></button>
                 </div>
             </div>
 
