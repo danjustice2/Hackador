@@ -27,4 +27,26 @@
             </response2>
         </responses>
     </question>
+
+    <question id="3">
+        <body-text>Test body text</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>Jeg ringer til design virksomheden og får rabatten bekræftet. </text>
+                <reply>Designvirksomhedens e-mail kan være hacket, og beløbsmodtageren kan i dette tilfælde være hackeren.</reply>
+            </response1>
+            <response2 correct="false">
+                <text>Jeg konsulterer med direktionen og betaler, hvis direktionen godkender.</text>
+                <reply>Hvis ikke der foreligger sådan en aftale, så ring til designvirksomheden og få det bekræftet. Deres mail kan være hacket.</reply>
+            </response2>
+            <response3 correct="false">
+                <text>Jeg konsulterer med direktionen og betaler, hvis direktionen godkender.</text>
+                <reply>Hvis ikke der foreligger sådan en aftale, så ring til designvirksomheden og få det bekræftet. Deres mail kan være hacket.</reply>
+            </response3>
+            <response4 correct="false">
+                <text>Jeg konsulterer med direktionen og betaler, hvis direktionen godkender.</text>
+                <reply>Hvis ikke der foreligger sådan en aftale, så ring til designvirksomheden og få det bekræftet. Deres mail kan være hacket.</reply>
+            </response4>
+        </responses>
+    </question>
 </xml>

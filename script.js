@@ -48,98 +48,128 @@ function buttonColor(button, color) {
 
 function xmlParser(xml) {
     
-    //console.log("starting xmlParser")
     xmlDoc = $.parseXML( xmlToString(xml) );
     $xml = $(xmlDoc),
 
     upper = ($(xml).find("question").length +1);
 
+    // If they haven't picked yet, choose a random question
     if(isStarted == false) {
         $(isStarted = true);
         id = rand();
     }
+
+    // If they have, keep choosing new questions until you get one that isn't the same as the last one.
     else {
         do {
             newID = rand();
         }
         while (newID == id);
         id = newID;
+
+        // Allow the user to select a new answer
         selected = false;
-        buttonColor("#response1", defaultButton);
-        buttonColor("#response2", defaultButton);
+
+        resetButtons();
+
         $("#reply-text").text("");
         $("#correct-header").text("");
         $("#reply").hide();
     }
+
+    // Find the chosen question
     $question = $xml.find('question[id="' + id + '"]')
 
-    $bodytext = $question.find("body-text");
+    $("#body-text").text($question.find("body-text").text());
+    for(let i = 1; i<5; i++){
+        r = fetchResponse(i)
 
-    $response1 = $question.find("response1").find("text");
-    $response2 = $question.find("response2").find("text");
-    if($question.find("response3")){
-        $response3 = $question.find("response3").find("text");
+        if (r) {
+            $('#response' +i).text(r);
+            $('#response' +i).show();
+        }
+        else {
+            $('#response' +i).hide();
+            $("#response" +i).text == ""
+        }
     }
-    if($question)
-    
-    /*response1correct = $question.find("response1").attr("correct");
-    response2correct = $question.find("response2").attr("correct");
-    response3correct = $question.find("response3").attr("correct");
-    response4correct = $question.find("response4").attr("correct");
-    response1reply = $question.find("response1").find("reply");
-    response2reply = $question.find("response2").find("reply");*/
-
-
-    $("#body-text").text($bodytext.text());
-    $("#response1").text($response1.text());
-    $("#response2").text($response2.text());
-    $("#response3").text($response1.text());
-    $("#response4").text($response2.text());
 
 }
 
+function resetButtons(){
+    for(let i = 1; i<5; i++){
+        buttonColor("#response" +i, defaultButton);
+        $("#response" +i).text("");
+    }
+}
 
-var response = (function response(id){
-    var responsevalue
+
+function respond(id){
     if (!selected){ // Only execute if the user hasn't already selected an answer to this question.
-
-    // Check the response id. This should either be 1 or 2.
-        if (id == 1) {responsevalue = "response1"; correct = response1correct; reply = response1reply;}
-        else if (id == 2) {responsevalue = "response2"; correct = response2correct; reply = response2reply;}
-        else {console.error("Invalid value for id: " +id);}
 
         selected = true; // Indicate that the user has selected so they can't select again
 
+        $("#reply-text").text(fetchReply(id));
         $('#reply').show();
-        $("#reply-text").text(reply.text());
 
         // Set the button either to red or green depending on correctness
-        if (correct == "false"){ 
-            buttonColor('#' +responsevalue, wrongColor);
+        if (checkCorrect(id) == "false"){ 
+            buttonColor('#response' +id, wrongColor);
             $('#correct-header').text("Forkert");
         }
         else if (correct == "true") {
-            buttonColor('#' +responsevalue, rightColor);
+            buttonColor('#response' +id, rightColor);
             $('#correct-header').text("Korrekt");
         }
         else {console.error("Invalid value for " +responsevalue+ ": " +correct);}
     }
-})
+}
+
+function checkCorrect(id){
+    correct = $question.find("response" +id).attr("correct");
+    if (correct){
+        return correct;
+    }
+    else {
+        console.log("Error: Value 'correct' is false.")
+    }
+    
+}
+
+function fetchReply(id){
+    reply = $question.find("response" +id).find("reply").text();
+    if (reply){
+        return reply;
+    }
+    else  {
+        console.log("Error: Value 'reply' is false.")
+    }
+}
+
+function fetchResponse(id){
+    response = $question.find("response" +id).find("text").text();
+    if (response){
+        return response;
+    }
+    else  {
+        return false;
+    }
+}
 
 function response1() {
-    response(1);
+    respond(1);
 }
 
 function response2() {
-    response(2);
+    respond(2);
 }
 
 function response3(){
-    response(3);
+    respond(3);
 }
 
 function response4(){
-    response(4);
+    respond(4);
 }
 
 function xmlToString(xmlData) { 
