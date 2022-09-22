@@ -1,25 +1,21 @@
 var lower = 1;
 var isStarted = false;
 var id;
-var response1correct;
-var response2correct;
-var response1reply;
-var response2reply;
 var selected = false;
 var defaultButton = "#212227";
-var wrongColor = "red";
-var rightColor = "#36ff40";
+var wrongColor = "#B70002";
+var rightColor = "#07ADE3";
+
+var replyDebug = false;
     
 $( document ).ready(function() {
-    /*$('#question').hide();
-    $('#reply').hide();*/
+
+    
+    
+    
     //console.log("Hid question element");
     question();
-    buttonColor("#response1", defaultButton);
-    buttonColor("#response2", defaultButton);
-    buttonColor("#response3", defaultButton);
-    buttonColor("#response4", defaultButton);
-    buttonColor("#pick", defaultButton);
+    resetButtons();
 });
 
 function question(){
@@ -39,11 +35,6 @@ var rand = (function rand() {
     return randnum;
     console.log("Getting random number " + randnum)
 });
-
-function buttonColor(button, color) {
-    $(button).css("background-color",color);
-    
-}
 
 
 function xmlParser(xml) {
@@ -80,6 +71,16 @@ function xmlParser(xml) {
     // Find the chosen question
     $question = $xml.find('question[id="' + id + '"]')
 
+    if (!replyDebug) {
+        $('#question').show();
+        $('#reply').hide();
+    }
+    else{
+        respond(1);
+        $('#question').hide();
+        $('#reply').show();
+    }
+
     $("#body-text").text($question.find("body-text").text());
     for(let i = 1; i<5; i++){
         r = fetchResponse(i)
@@ -98,7 +99,6 @@ function xmlParser(xml) {
 
 function resetButtons(){
     for(let i = 1; i<5; i++){
-        buttonColor("#response" +i, defaultButton);
         $("#response" +i).text("");
     }
 }
@@ -111,15 +111,17 @@ function respond(id){
 
         $("#reply-text").text(fetchReply(id));
         $('#reply').show();
+        $('#question').hide();
 
-        // Set the button either to red or green depending on correctness
         if (checkCorrect(id) == "false"){ 
-            buttonColor('#response' +id, wrongColor);
+            $('#correct-header').css('color', wrongColor);
             $('#correct-header').text("Forkert");
+            $('#correct-img').attr("src", "assets/RedLock.svg");
         }
         else if (correct == "true") {
-            buttonColor('#response' +id, rightColor);
+            $('#correct-header').css('color', rightColor);
             $('#correct-header').text("Korrekt");
+            $('#correct-img').attr("src", "assets/BlueLock.svg");
         }
         else {console.error("Invalid value for " +responsevalue+ ": " +correct);}
     }

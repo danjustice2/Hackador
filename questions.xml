@@ -29,7 +29,7 @@
     </question>
 
     <question id="3">
-        <body-text>Test body text</body-text>
+        <body-text>Du arbejder som bogholder og er informeret om, at I har et samarbejde i gang med en design virksomhed, og bogholderiet afventer en faktura på første halvdel af betalingen. I modtager en mail fra virksomheden om, at I kan få 10% rabat, hvis I betaler hele beløbet forude. Mailadressen er korrekt. Hvad gør du? </body-text>
         <responses>
             <response1 correct="true">
                 <text>Jeg ringer til design virksomheden og får rabatten bekræftet. </text>

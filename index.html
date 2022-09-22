@@ -2,10 +2,9 @@
 <html lang="da">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Spørgsmålskort - Hackador</title>
         <style>
-
         * {
             color: #B0B0B8;
             text-align: center;
@@ -24,7 +23,7 @@
         }
 
         button {
-            background-color: #ffffff; /* Background color is set in javascript */
+            background-color: #212227; /* Background color is set in javascript */
             
             border:  none;
             padding-left: 20px;
@@ -64,32 +63,68 @@
 
             padding-top: 10px;
             padding-bottom: 10px;
+            height: 7vh;
         }
 
         h1 {
             text-transform: uppercase;
-            font-size: 26px;
-            
-            margin-top: 15%;
-            margin-bottom: 5%;
+            font-size: 32px;  
+            margin-bottom: 8px;
+        }
+        
+        p {
+            padding-left: 32px;
+            padding-right: 32px;
         }
 
-        #question {
+        .container {
             display: flex;
-            align-items: center;
             justify-content: center;
             flex-direction: column;
-            justify-content: space-between;
-            margin-left: 10%;
-            margin-right: 10%;
+            margin-left: 0;
+            margin-right: 0;
+            height: 93vh;
+            padding: 20px;
         }
 
-        .text-box {
-            margin-bottom: 10%;
+        p {
+            margin-bottom: 24px;
         }
 
+        #imgcontainer {
+            position: relative;
+            display: block;
+            margin: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
+        .textcontainer {
+            background-color: #131623;
+            box-shadow: 0 0 3px #dedede;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
 
+        .half-vertical {
+            height: 50vh;
+            width: 100vw;
+            padding: 0;
+        }
+
+        img {
+            max-width: 65%;
+            max-height: 100%;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
         </style>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -98,20 +133,28 @@
     </head>
     <body>
         <main>
-            <div id="question">
+            <div id="question" class="container">
                 <h1>Action</h1>
-                <p id="body-text" class="text-box"></p>
+                <p id="body-text"></p>
                 <div class="response-container">
-                    <button class="response" id="response1" onclick="response1()"></button>
-                    <button class="response" id="response2" onclick="response2()"></button>
-                    <button class="response" id="response3" onclick="response3()"></button>
-                    <button class="response" id="response4" onclick="response4()"></button>
+                    <button class="response" id="response1" onclick="respond(1)"></button>
+                    <button class="response" id="response2" onclick="respond(2)"></button>
+                    <button class="response" id="response3" onclick="respond(3)"></button>
+                    <button class="response" id="response4" onclick="respond(4)"></button>
                 </div>
             </div>
 
-            <div class="text-box" id="reply">
-                <h1 id="correct-header"></h1>
-                <p id="reply-text" class="body-text"></p>
+            <div id="reply">
+                <div class="half-vertical" id="imgcontainer">
+                    <img src="assets/ColCard.png" id="correct-img"/>
+                </div>
+                <div class="half-vertical textcontainer">
+                    <div>
+                        <h1 id="correct-header"></h1>
+                        <p id="reply-text" class="body-text"></p>
+                    </div>
+                    
+                </div>       
             </div>
 
             <div class="button-container"><button class="pick" id="pick" onclick="question()">Træk et nyt spørgsmål</button></div>
