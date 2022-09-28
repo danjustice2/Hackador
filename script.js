@@ -54,8 +54,6 @@ function rand() {
 
 
 function xmlParser(xml) {
-    
-    $xml = $(xmlDoc),
 
      
     upper = ($(xml).find("question").length +1);

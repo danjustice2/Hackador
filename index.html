@@ -12,7 +12,6 @@
 
             margin: 0px;
             padding: 0px;
-            overflow: hidden;
         }
 
         body {
@@ -39,7 +38,8 @@
 
             margin-bottom: 5%;
 
-            font-size: 14px;
+            font-size: 16px;
+            cursor: pointer;
 
         }
 
@@ -53,17 +53,17 @@
 
         .pick {
 
-            bottom: 0%;
-            left: 0%;
-            right: 0%;
+            bottom: 0;
+            left: 0;
+            right: 0;
 
             border-radius: 0px;
             margin: 0px;
-            position: absolute;
+            position: fixed;
 
             padding-top: 10px;
             padding-bottom: 10px;
-            height: 7vh;
+            height: 42px;
             z-index: 0;
         }
 
@@ -135,6 +135,9 @@
             bottom: 0;
             top: 0;
             z-index: 1;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
         }
         </style>
 
@@ -144,7 +147,7 @@
     </head>
     <body>
         <!-- <img src="assets/bg_mobile.png" alt="" style="object-fit:cover" /> -->
-        <div class="loader container" style="padding: 0;">
+        <div class="loader">
             <h1>Indlæser</h1>
             <h2>Placeholder element</h2>
         </div>
@@ -160,7 +163,7 @@
                 </div>
             </div>
 
-            <div id="reply" style="visibility: hidden;">
+            <div id="reply" style="">
                 <div class="half-vertical" id="imgcontainer">
                     <img src="" id="correct-img"/>
                 </div>
@@ -173,8 +176,9 @@
                 </div>       
             </div>
 
-            <div class="button-container"><button class="pick" id="pick" onclick="question()">Træk et nyt spørgsmål</button></div>
+            
         </main>
+        <div class="button-container"><button class="pick" id="pick" onclick="question()">Træk et nyt spørgsmål</button></div>
     </body>
 
 
