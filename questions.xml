@@ -58,4 +58,30 @@
             </response2>
         </responses>
     </question>
+    <question id="5">
+        <body-text>Hvad betyder spoofing?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Hackere ligger sig som skygge over din pc og overvåger alt du foretager dig.</text>
+                <reply>Den slags angreb plejer man at kalde spyware. Spoofing er, når man udgiver sig for at være en mail, telefonnummer, hjemmeside eller person som man ikke er. Dette skal dog ikke forveksles med phishing (at lokke en person til at overrække fortrolige oplysninger el.). Spoofing er en metode, som kan bruges til phishing. Metoder kan dog også bruges til andre ting, som fx. at lokke dig til at installere malware.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>At hackere udgiver sig for at være en mail, telefonnummer, hjemmeside eller person de ikke er, for at lokke dig til at gøre noget du ellers ikke ville have gjort, eksempelvis udlevere information.</text>
+                <reply>Spoofing er dog ikke det samme som phishing. Phishing er blot én type angreb, som kan udføres ved hjælp af spoofing. Spoofing kan også bruges til fx. at lokke dig til at installere malware.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="6">
+        <body-text>Hvad er en orm?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Det er et stykke malware som kopierer sig selv og spreder sig på den måde, og kan bruges til at bl.a. at  installere bagdøre for hackere at komme ind.</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Et stykke kode der borer sig igennem firewall ved at 'spise' kode.</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
 </xml>
