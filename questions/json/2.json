@@ -1,0 +1,15 @@
+{
+   "body-text": "Du arbejder som bogholder og er informeret om, at I har et samarbejde i gang med en design virksomhed, og bogholderiet afventer en faktura på første halvdel af betalingen. I modtager en mail fra virksomheden om, at I kan få 10% rabat, hvis I betaler hele beløbet forude. Mailadressen er korrekt. Hvad gør du?",
+   "responses": {
+      "response1": {
+         "text": "Jeg ringer til design virksomheden og får rabatten bekræftet.",
+         "reply": "Designvirksomhedens e-mail kan være hacket, og beløbsmodtageren kan i dette tilfælde være hackeren.",
+         "_correct": "true"
+      },
+      "response2": {
+         "text": "Jeg konsulterer med direktionen og betaler, hvis direktionen godkender.",
+         "reply": "Hvis ikke der foreligger sådan en aftale, så ring til designvirksomheden og få det bekræftet. Deres mail kan være hacket.",
+         "_correct": "false"
+      }
+   }
+}

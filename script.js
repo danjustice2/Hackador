@@ -5,47 +5,61 @@ var selected = false;
 var defaultButton = "#212227";
 var wrongColor = "#B70002";
 var rightColor = "#07ADE3";
+var xml = null;
+var path = "questions.xml"
 
 var replyDebug = false;
     
-$( document ).ready(function() {
-
-    
-    
-    
-    //console.log("Hid question element");
-    question();
-    resetButtons();
-});
+question();
 
 function question(){
-    
-    path = "questions.xml"
-    
-    $.ajax({
-        type: "GET",
-        url: path,
-        dataType: "xml",
-        success: xmlParser});
+      
+    if (xml == null) {
+        console.log("running ajax request");
+        $.ajax({
+            'type': "GET",
+            'url': path,
+            'dataType': "xml",
+            'success': function(data) { 
+                useReturnData(data); 
+                if (xml == null) {
+                    console.error("xml is null");
+                }
+                else {
+                    console.log("running xml parser");
+                    xmlParser(xml);
+                }
+            }
+        });
+
+        upper = ($(xml).find("question").length);
+    }
+    else {
+        xmlParser(xml);
+    }
+
     
 };
 
-var rand = (function rand() {
-    var randnum = Math.floor(Math.random()*(upper-lower))+lower
+function useReturnData(data){
+    xml = data;
+    console.log(xml);
+};
+
+function rand() {
+    var randnum = Math.floor(Math.random()*(upper-lower))+lower;
+    console.log("Getting random number " + randnum + " between " +lower+ " and " +(upper-1));
     return randnum;
-    console.log("Getting random number " + randnum)
-});
+};
 
 
 function xmlParser(xml) {
-    
-    xmlDoc = $.parseXML( xmlToString(xml) );
-    $xml = $(xmlDoc),
 
+     
     upper = ($(xml).find("question").length +1);
 
     // If they haven't picked yet, choose a random question
-    if(isStarted == false) {
+    if(!isStarted) {
         $(isStarted = true);
         id = rand();
     }
@@ -69,7 +83,7 @@ function xmlParser(xml) {
     }
 
     // Find the chosen question
-    $question = $xml.find('question[id="' + id + '"]')
+    $question = $(xml).find('question[id="' + id + '"]')
 
     if (!replyDebug) {
         $('#question').show();

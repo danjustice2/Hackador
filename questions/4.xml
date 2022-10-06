@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <question>
+        <body-text>Hvilket af følgende links kan være farlige?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>https://www.facebook.com/</text>
+                <reply>Linket https://www.facebook.com/ er den almindelige adresse til Facebooks hjemmeside. Det kan man bl.a. se ved at der står https foran i stedet for kun http. S'et i HTTPS står for 'secure', hvilket betyder, at forbindelsen er krypteret og at serveren på den anden side er valideret af et certifikat.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>http://www.facebook.com/</text>
+                <reply>Facebook bruger almindeligvis HTTPS, og ikke blot HTTP. S'et i HTTPS står for 'secure', hvilket betyder, at forbindelsen er krypteret og at serveren på den anden side er valideret af et certifikat. Hvis en uvedkommende forsøger at omdirigere din trafik til en anden server vil de ikke kunne forsyne din browser med et gyldigt certifikat, hvilket resulterer i, at du får en advarsel på skærmen.</reply>
+            </response2>
+        </responses>
+    </question>
+</xml>

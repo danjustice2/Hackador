@@ -38,7 +38,8 @@
 
             margin-bottom: 5%;
 
-            font-size: 14px;
+            font-size: 16px;
+            cursor: pointer;
 
         }
 
@@ -52,18 +53,18 @@
 
         .pick {
 
-            bottom: 0%;
-            left: 0%;
-            right: 0%;
+            bottom: 0;
+            left: 0;
+            right: 0;
 
             border-radius: 0px;
             margin: 0px;
-            
-            position: absolute;
+            position: fixed;
 
             padding-top: 10px;
             padding-bottom: 10px;
-            height: 7vh;
+            height: 42px;
+            z-index: 0;
         }
 
         h1 {
@@ -125,6 +126,19 @@
             padding-top: 10%;
             padding-bottom: 10%;
         }
+
+        .loader {
+            width: 100vw;
+            height: 100vh;
+            background-color: #212227;
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
         </style>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -132,6 +146,11 @@
         <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
+        <!-- <img src="assets/bg_mobile.png" alt="" style="object-fit:cover" /> -->
+        <div class="loader">
+            <h1>Indlæser</h1>
+            <h2>Placeholder element</h2>
+        </div>
         <main>
             <div id="question" class="container">
                 <h1>Action</h1>
@@ -144,9 +163,9 @@
                 </div>
             </div>
 
-            <div id="reply">
+            <div id="reply" style="">
                 <div class="half-vertical" id="imgcontainer">
-                    <img src="assets/ColCard.png" id="correct-img"/>
+                    <img src="" id="correct-img"/>
                 </div>
                 <div class="half-vertical textcontainer">
                     <div>
@@ -157,7 +176,22 @@
                 </div>       
             </div>
 
-            <div class="button-container"><button class="pick" id="pick" onclick="question()">Træk et nyt spørgsmål</button></div>
+            
         </main>
+        <div class="button-container"><button class="pick" id="pick" onclick="question()">Træk et nyt spørgsmål</button></div>
     </body>
+
+
 </html>
+
+<script>
+    const loader = document.querySelector(".loader");
+    window.onload = function(){
+      setTimeout(function(){
+        loader.style.opacity = "0";
+        setTimeout(function(){
+          loader.style.display = "none";
+        }, 500);
+      },1500);
+    }
+ </script>

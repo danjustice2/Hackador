@@ -68,10 +68,20 @@
             <response2 correct="true">
                 <text>At hackere udgiver sig for at være en mail, telefonnummer, hjemmeside eller person de ikke er, for at lokke dig til at gøre noget du ellers ikke ville have gjort, eksempelvis udlevere information.</text>
                 <reply>Spoofing er dog ikke det samme som phishing. Phishing er blot én type angreb, som kan udføres ved hjælp af spoofing. Spoofing kan også bruges til fx. at lokke dig til at installere malware.</reply>
+    <question id="6">
+        <body-text>I har anskaffet videoovervågning, så I kan holde øje med jeres område. Hvad gør I?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Slutter det til netværket, så I kan se videoen udefra</text>
+                <reply>Imens det kan være meget praktisk at kunne kigge på overvågningen udefra kan det også være meget risikabelt, alt efter hvordan systemet bliver sat op. Derfor anbefales det som hovedregel, at man kontakter rådfører sig med en troværdig it-leverandør, når det angår sådanne sager.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Kontakter jeres it-leverandør for at oprette en separate internetforbindelse til videoovervågningen</text>
+                <reply>Imens det kan være meget praktisk at kunne kigge på overvågningen udefra kan det også være meget risikabelt, alt efter hvordan systemet bliver sat op. Derfor anbefales det som hovedregel, at man kontakter rådfører sig med en troværdig it-leverandør, når det angår sådanne sager.</reply>
             </response2>
         </responses>
     </question>
-    <question id="6">
+    <question id="7">
         <body-text>Hvad er en orm?</body-text>
         <responses>
             <response1 correct="false">
@@ -81,6 +91,41 @@
             <response2 correct="true">
                 <text>Et stykke kode der borer sig igennem firewall ved at 'spise' kode.</text>
                 <reply></reply>
+        <body-text>En person henvender sig i receptionen og fortæller at han hedder Peter Hansen og er der for at reparere jeres server, som der er modtaget underretning om ikke fungerer optimalt. Hvad gør du?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Jeg beder om at se mandens legitimation og viser ham ind.</text>
+                <reply>Det er en rigtig god idé at bede om legitimation, hvis der er tale om et ventet besøget. At give fysisk adgang til servere er dog en alvorlig sag. Derfor er det vigtigt, at man er 100% sikker på, at vedkommende faktisk har tilladelse til komme ind.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Jeg beder manden om at vente, imens jeg kontakter it-afdelingen for at bekræfte, at reperationen er blevet tilkaldt.</text>
+                <reply>At give fysisk adgang til servere er dog en alvorlig sag. Derfor er det vigtigt, at man er helt sikker på, at vedkommende må komme ind. Efterfølgende kan det også være en god idé at tjekke legitimation som en ekstra sikkerhed.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="8">
+        <body-text>Hvad er et Zero-day-angreb?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Et angreb der går så hurtigt, at de nedlægger systemet på under en dag.</text>
+                <reply>En af grundene til, at det er så svært at beskytte sig imod cyberangreb er, at nye sikkerhedshuller bliver skabt og opdaget hele tiden. Et Zero-day-angreb er et angreb, som udnytter et sikkerhedshul, som aldrig er blevet opdaget før. Det er på 'zero-day' hvor potentialet for skade er allehøjest, da ingen har nået at 'lappe' hullet i deres sikkerhed endnu.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Hackere udnytter huller i et system eller software, som ikke er set før.</text>
+                <reply>En af grundene til, at det er så svært at beskytte sig imod cyberangreb er, at nye sikkerhedshuller bliver skabt og opdaget hele tiden. Det er på 'zero-day' hvor potentialet for skade er allehøjest, da ingen har nået at 'lappe' hullet i deres sikkerhed endnu.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="9">
+        <body-text>Hvad er 2FA?</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>At man bruger to kodeord: et almindeligt kodeord samt en unik kode, som bliver tildelt hver gang man logger ind.</text>
+                <reply>2FA står for two-factor authentication (på dansk: to-faktor godkendelse). Alle former for godkendelse har deres unikke sikkerhedsproblemer. Ved at bruge to forskellige (et almindeligt kodeord og en unik, vilkårig kode) gør man det meget sværre for uvedkommende at få adgang.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Et angreb, hvor hackere bruger to forskellige indgange til dit PC eller netværk.</text>
+                <reply>2FA står for two-factor authentication (på dansk: to-faktor godkendelse). Den ene faktor er typisk et almindeligt kodeord og den anden er en kode, som bliver genereret hver gang man logger ind. Ved at bruge to forskellige koder gør man det meget sværre for uvedkommende at få adgang.</reply>
             </response2>
         </responses>
     </question>
