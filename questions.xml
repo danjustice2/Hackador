@@ -87,13 +87,13 @@
     <question id="7">
         <body-text>Hvad er en orm?</body-text>
         <responses>
-            <response1 correct="false">
+            <response1 correct="true">
                 <text>Det er et stykke malware som kopierer sig selv og spreder sig på den måde, og kan bruges til at bl.a. at  installere bagdøre for hackere at komme ind.</text>
-                <reply></reply>
+                <reply>Orme er en af de ældste og mest populære former for malware, da den er forholdsvist simpel i sin virkemåde, men kan samtidigt være vanskelig at komme af med. Modsat en virus behøver man ikke aktivt at åbne en orm for at den kan begynde at sprede sig.</reply>
             </response1>
-            <response2 correct="true">
+            <response2 correct="false">
                 <text>Et stykke kode der borer sig igennem firewall ved at 'spise' kode.</text>
-                <reply></reply>
+                <reply>Orme er en af de ældste og mest populære former for malware, da den er forholdsvist simpel i sin virkemåde: den laver kopier af sig selv for at sprede sig. Modsat en virus behøver man ikke aktivt at åbne en orm for at den kan begynde at sprede sig.</reply>
             </response2>
         </responses>
     </question>
