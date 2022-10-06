@@ -68,6 +68,9 @@
             <response2 correct="true">
                 <text>At hackere udgiver sig for at være en mail, telefonnummer, hjemmeside eller person de ikke er, for at lokke dig til at gøre noget du ellers ikke ville have gjort, eksempelvis udlevere information.</text>
                 <reply>Spoofing er dog ikke det samme som phishing. Phishing er blot én type angreb, som kan udføres ved hjælp af spoofing. Spoofing kan også bruges til fx. at lokke dig til at installere malware.</reply>
+    		</response2>
+    	</responses>
+    </question>
     <question id="6">
         <body-text>I har anskaffet videoovervågning, så I kan holde øje med jeres område. Hvad gør I?</body-text>
         <responses>
@@ -91,15 +94,6 @@
             <response2 correct="true">
                 <text>Et stykke kode der borer sig igennem firewall ved at 'spise' kode.</text>
                 <reply></reply>
-        <body-text>En person henvender sig i receptionen og fortæller at han hedder Peter Hansen og er der for at reparere jeres server, som der er modtaget underretning om ikke fungerer optimalt. Hvad gør du?</body-text>
-        <responses>
-            <response1 correct="false">
-                <text>Jeg beder om at se mandens legitimation og viser ham ind.</text>
-                <reply>Det er en rigtig god idé at bede om legitimation, hvis der er tale om et ventet besøget. At give fysisk adgang til servere er dog en alvorlig sag. Derfor er det vigtigt, at man er 100% sikker på, at vedkommende faktisk har tilladelse til komme ind.</reply>
-            </response1>
-            <response2 correct="true">
-                <text>Jeg beder manden om at vente, imens jeg kontakter it-afdelingen for at bekræfte, at reperationen er blevet tilkaldt.</text>
-                <reply>At give fysisk adgang til servere er dog en alvorlig sag. Derfor er det vigtigt, at man er helt sikker på, at vedkommende må komme ind. Efterfølgende kan det også være en god idé at tjekke legitimation som en ekstra sikkerhed.</reply>
             </response2>
         </responses>
     </question>
@@ -126,6 +120,19 @@
             <response2 correct="true">
                 <text>Et angreb, hvor hackere bruger to forskellige indgange til dit PC eller netværk.</text>
                 <reply>2FA står for two-factor authentication (på dansk: to-faktor godkendelse). Den ene faktor er typisk et almindeligt kodeord og den anden er en kode, som bliver genereret hver gang man logger ind. Ved at bruge to forskellige koder gør man det meget sværre for uvedkommende at få adgang.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="10">
+        <body-text>En person henvender sig i receptionen og fortæller at han hedder Peter Hansen og er der for at reparere jeres server, som der er modtaget underretning om ikke fungerer optimalt. Hvad gør du?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Jeg beder om at se mandens legitimation og viser ham ind.</text>
+                <reply>Det er en rigtig god idé at bede om legitimation, hvis der er tale om et ventet besøget. At give fysisk adgang til servere er dog en alvorlig sag. Derfor er det vigtigt, at man er 100% sikker på, at vedkommende faktisk har tilladelse til komme ind.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Jeg beder manden om at vente, imens jeg kontakter it-afdelingen for at bekræfte, at reperationen er blevet tilkaldt.</text>
+                <reply>At give fysisk adgang til servere er dog en alvorlig sag. Derfor er det vigtigt, at man er helt sikker på, at vedkommende må komme ind. Efterfølgende kan det også være en god idé at tjekke legitimation som en ekstra sikkerhed.</reply>
             </response2>
         </responses>
     </question>
