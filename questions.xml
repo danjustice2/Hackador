@@ -176,7 +176,7 @@
         </responses>
     </question>
     <question id="14">
-        <body-text>Hvad kalder man et system, som overvåger og regulerer indgående og udgående nettrafik?</body-text>
+        <body-text>Hvad er Brute-force?</body-text>
         <responses>
             <response1 correct="false">
                 <text>Et angreb hvor hackeren holder øje med alt man foretager sig på nettet.</text>
@@ -190,6 +190,32 @@
                 <text>En hacker som bryder fysisk ind og stjæler elektroniske enheder.</text>
                 <reply>Sådan et angreb kaldes typisk bare for tyveri. Brute-force-angreb afprøver alverdens kodeord, indtil de finder det der virker.</reply>
             </response3>
+        </responses>
+    </question>
+    <question id="15">
+        <body-text>Hvad er en Watering Hole Attack?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>En hacking strategi, hvor ofret bliver lokket i en fælde ved at klikke på et link eller downloade en fil.</text>
+                <reply>Den strategi kan bruges til mange hacking-metoder, men i tilfældet af en Watering Hole Attack forsøger hackere målrettet at inficere hjemmesider, som bliver hyppigt besøgt af medarbejdere i en organisation i et forsøg på at ramme organisationen udefra.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>En hacking strategi, hvor hackere inficerer en eller flere hjemmesider, som er hyppigt besøgt af medarbejdere i en organisation.</text>
+                <reply>Her forsøger hackere målrettet at inficere hjemmesider med malware i et forsøg på at ramme organisationen udefra. Der kan være mange grunde til at en hackere kunne have lyst til at vælge denne metode, bl.a. at man har lettere ved at snyde sin vej ind til de pågældende hjemmesider.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="16">
+        <body-text>Sandt eller falsk: kryptering hjælper med at opdage cyber-angreb i dit system.</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Sandt</text>
+                <reply>Imens kryptering kan i nogen grad hjælpe med at beskytte imod cyber-angreb, hjælper det dig ikke med at opdage at et angreb er sket.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Falsk</text>
+                <reply></reply>
+            </response2>
         </responses>
     </question>
 </xml>
