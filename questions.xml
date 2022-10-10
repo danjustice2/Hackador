@@ -136,4 +136,60 @@
             </response2>
         </responses>
     </question>
+    <question id="11">
+        <body-text>Hvad er ransomware?</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>En type software som inficerer computernetværk og mobilenheder, som holder dine data til fange indtil du har betalt løsesummen.</text>
+                <reply>En populær teknik, som ransomware benytter er, at kryptere vigtige data for at gøre det vanskeligere for offeren at undslippe ransomwaren. Når store virksomheder bliver ramt af ransomware kan det blive til en stor sag i pressen, men individuelle borgere kan også rammes af disse angreb.</reply>
+            </response1>
+            <response2 correct="false">
+                <text>Tyveri af elektroniske enheder (såsom computer, tv, mobil, mv) som kriminelle stjæler og ikke vil aflevere tilbage før du betaler dem.</text>
+                <reply>Ransomware indebærer ikke fysisk tyveri af enheder, men bruger i stedet software til at begrænse adgangen til dataen indtil løsesummen bliver betalt. Det er med til at mindske den kriminelles risiko for at blive taget af fx. politiet for handlingen.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="12">
+        <body-text>Hvilken af de følgende angrebsmetoder bruges bl.a. til at nedlægge hjemmesider?</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>DDoS-angreb</text>
+                <reply>DDoS står for 'direct denial of service' og udføres ved at sende massevis af formålsløse anmodninger til en server. Målet er, at de formålsløse anmodninger optager så mange af serverens ressourser, at den ikke kan nå at respondere på ægte anmodninger. Til sidst kan serveren gå helt i stå hvorefter den skal genstartes manuelt af en administrator.</reply>
+            </response1>
+            <response2 correct="false">
+                <text>C-Sharp-angreb</text>
+                <reply>C-Sharp er bare et programmeringssprog. DDoS står til gengæld for 'direct denial of service' og udføres ved at sende massevis af formålsløse anmodninger til en server. Målet er, at de formålsløse anmodninger optager så mange af serverens ressourser, at den ikke kan nå at respondere på ægte anmodninger. Til sidst kan serveren gå helt i stå hvorefter den skal genstartes manuelt af en administrator.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="13">
+        <body-text>Hvad kalder man et system, som overvåger og regulerer indgående og udgående nettrafik?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Malware</text>
+                <reply>Malware (sammensætningen af 'malicious software,' eller 'ondsindet software') kan godt overvåge og forstyrre nettrafik, men det er ikke nødvendigvis tilfældet. En firewall er ikke malware, men kan derimod være med til at beskytte dig imod malware. Firewall'en tillader kun trafik som er godkendt af dens regler. Hvad de regler er, er oftest indstillet af it-personale eller er forudindstillet på enheder, man køber.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Firewall</text>
+                <reply>En firewall er ikke malware, men kan derimod være med til at beskytte dig imod malware. Firewall'en tillader kun trafik som er godkendt af dens regler. Hvad de regler er, er oftest indstillet af it-personale eller er forudindstillet på enheder, man køber.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="14">
+        <body-text>Hvad kalder man et system, som overvåger og regulerer indgående og udgående nettrafik?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Et angreb hvor hackeren holder øje med alt man foretager sig på nettet.</text>
+                <reply>Den slags angreb kaldes typisk for spyware. Brute-force-angreb afprøver alverdens kodeord, indtil de finder det der virker.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Et angreb hvor hackeren bruger en computer til at afprøve alverdens kodeord, indtil de finder det der virker.</text>
+                <reply>Disse angreb kan opdeles i flere katagorier, men overordnet set kan man beskytte sig selv meget effektivt imod disse angreb ved ikke at have meget simple kodeord.</reply>
+            </response2>
+            <response3 correct="false">
+                <text>En hacker som bryder fysisk ind og stjæler elektroniske enheder.</text>
+                <reply>Sådan et angreb kaldes typisk bare for tyveri. Brute-force-angreb afprøver alverdens kodeord, indtil de finder det der virker.</reply>
+            </response3>
+        </responses>
+    </question>
 </xml>
