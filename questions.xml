@@ -218,7 +218,7 @@
             </response2>
         </responses>
     </question>
-<!--    <question id="1">
+<!--<question id="1">
         <body-text></body-text>
         <responses>
             <response1 correct="false">
@@ -241,6 +241,58 @@
             <response2 correct="true">
                 <text>Falsk</text>
                 <reply>Når ransomware bliver opdaget skal it-professionelle tilkaldes snarest muligt, da det giver de bedste odds for at genskabe ens data uden at betale løsesummen. Oddsene er nemlig ofte imod dig, når det har med ransomware at gøre. Der har været tilfælde hvor selv store virksomheder er blevet nødsaget til at betale en løsesum for at redde deres kritiske data. Derfor er en sikreste løsning som altid at undgå at blive til et offer i første omgang.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="18">
+        <body-text>Sandt eller falsk: Hvis du bliver udsat for et ransomware-angreb, er det første du skal gøre, er at betale hackerne? (Et ransomware-angreb e)</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Sandt</text>
+                <reply>Det kan være meget stressende at være udsat for ransomware. At betale løsesummen er dog noget af det sidste man skal gøre. Det anbefales at it-specialister bliver tilkaldt snarest muligt efter at angrebet er opdaget: så er oddsene for at kunne fjerne ransomwaren allerhøjest. Der har dog været situationer, hvor virksomheder er endt med at skulle betale løsesummen for at redde deres data. Derfor er det selvfølgelig bedst hvis man kan undgå at angrebet sker i første omgang.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Falsk</text>
+                <reply>Når ransomware bliver opdaget skal it-professionelle tilkaldes snarest muligt, da det giver de bedste odds for at genskabe ens data uden at betale løsesummen. Oddsene er nemlig ofte imod dig, når det har med ransomware at gøre. Der har været tilfælde hvor selv store virksomheder er blevet nødsaget til at betale en løsesum for at redde deres kritiske data. Derfor er en sikreste løsning som altid at undgå at blive til et offer i første omgang.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="19">
+        <body-text>Du modtager en mail fra jeres HR, som skal bruge dit CPR-nummer til at bestille billetter til en forretningsrejse. Hvad gør du?</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>Ringer til HR, fordi man ikke skal bruge CPR-nummer for at bestille flybilletter.</text>
+                <reply>Udover at et CPR-nummer ikke er nødvendigt for at bestille flybilletter vil dit firmas HR-afdeling sandsynligvis allerede kende dit CPR-nummer.</reply>
+            </response1>
+            <response2 correct="false">
+                <text>Jeg kan se at mailadressen og mailens indhold er korrekt og vurderer, at det er sikkert at sende.</text>
+                <reply>Normalt er det en god idé at tjekke disse ting, men nogle mere avancerede typer angreb kan generere mails som ser helt ægte ud. Hvad der angår følsomme oplysninger er det bedst at være på den sikre side.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="20">
+        <body-text>Du sidder i toget på vej til en konference. Du har glemt din oplader til din telefon derhjemme. Personen ved siden af dig spørger om du vil låne deres kabel, som kosmetisk ser "ægte” ud. Hvilke risici er der forbundet med at låne en fremmedes kabel?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Der er indbygget GPS i kablet, hvis jeg glemmer at aflevere det tilbage er min sikkerhed i fare.</text>
+                <reply>Heldigvis er det ikke tilfældet, da et opladerkabel ikke kan rumme den nødvendige hardware for sådan en enhed. Flashdreve kan dog være meget små og indeholde malware, som kan inficere enheder som den kommer i kontakt med.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>De kan installere en virus på min computer og styre den fra alle steder i verden.</text>
+                <reply>Flashdreve kan være så små, at de kunne sættes inden i et USB-kabel og inficere enheder, som de kommer i kontakt med. Sandsynligheden for at det er tilfældet her er lav. Nogle telefoner vil spørge, om man gerne vil tillade overførsler når de forbinder til en enhed. Hvis man vil være ekstra sikker må man vælge ikke at tillade overførsler, når man bruger fremmede opladere.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="21">
+        <body-text>Du modtager en e-mail fra "e-Boks.dk <![CDATA[<]]>eboks-dk@noreply.dk<![CDATA[>]]>" klikker du på linket i mailen?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Ja</text>
+                <reply>Nøglen er at kigge på mailadressen. <![CDATA[<]]>eboks-dk@noreply.dk<![CDATA[>]]> er ikke en adresse fra e-boks, men en adresse fra hjemmesiden noreply.dk, hvilket ikke nødvendigvis er en troværdig kilde. Hvis du er i tvivl, lad være med at klikke på links og log ind til e-boks på en anden måde, fx. ved at søge efter e-boks på en søgemaskine, som fx. Google.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Nej</text>
+                <reply>Nøglen er at kigge på mailadressen. <![CDATA[<]]>eboks-dk@noreply.dk<![CDATA[>]]> er ikke en adresse fra e-boks, men en adresse fra hjemmesiden noreply.dk, hvilket ikke nødvendigvis er en troværdig kilde. Hvis du er i tvivl, lad være med at klikke på links og log ind til e-boks på en anden måde, fx. ved at søge efter e-boks på en søgemaskine, som fx. Google.</reply>
             </response2>
         </responses>
     </question>
