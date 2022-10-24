@@ -7,6 +7,7 @@ var wrongColor = "#B70002";
 var rightColor = "#07ADE3";
 var xml = null;
 var path = "questions.xml"
+var buttonTextChanged = false;
 
 var replyDebug = false;
     
@@ -36,21 +37,29 @@ function question(){
     }
     else {
         xmlParser(xml);
-    }
+    } 
+}
 
-    
-};
+function luk(){
+
+    $('#reply').hide();
+    $('#close').hide();
+    $('#question').hide();
+    $('#pick').text("Træk nyt spørgsmål");
+    buttonTextChanged = true;
+    $('#pick').show();
+}
 
 function useReturnData(data){
     xml = data;
     console.log(xml);
-};
+}
 
 function rand() {
     var randnum = Math.floor(Math.random()*(upper-lower))+lower;
     console.log("Getting random number " + randnum + " between " +lower+ " and " +(upper-1));
     return randnum;
-};
+}
 
 
 function xmlParser(xml) {
@@ -95,6 +104,11 @@ function xmlParser(xml) {
         $('#reply').show();
     }
 
+    if (buttonTextChanged) {
+        $('#pick').text("Jeg har allerede besvaret spørgsmålet");
+        buttonTextChanged = false;
+    }
+
     $("#body-text").text($question.find("body-text").text());
     for(let i = 1; i<5; i++){
         r = fetchResponse(i)
@@ -118,26 +132,33 @@ function resetButtons(){
 }
 
 
+
 function respond(id){
     if (!selected){ // Only execute if the user hasn't already selected an answer to this question.
 
         selected = true; // Indicate that the user has selected so they can't select again
 
         $("#reply-text").text(fetchReply(id));
-        $('#reply').show();
-        $('#question').hide();
 
         if (checkCorrect(id) == "false"){ 
             $('#correct-header').css('color', wrongColor);
             $('#correct-header').text("Forkert");
             $('#correct-img').attr("src", "assets/RedLock.svg");
+            $('#action-queue').text("Fjern en sikkerhedsbrik.");
         }
         else if (correct == "true") {
             $('#correct-header').css('color', rightColor);
             $('#correct-header').text("Korrekt");
             $('#correct-img').attr("src", "assets/BlueLock.svg");
+            $('#action-queue').text("Du må give turen videre til den næste spiller.");
         }
         else {console.error("Invalid value for " +responsevalue+ ": " +correct);}
+
+        $('#reply').show();
+        $('#close').show();
+
+        $('#question').hide();
+        $('#pick').hide();
     }
 }
 

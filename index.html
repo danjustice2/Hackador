@@ -14,12 +14,28 @@
             padding: 0px;
         }
 
+
         body {
             background: url('assets/bg_mobile.png') no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
+            overscroll-behavior: none;
+        }
+
+        .page-container {
+            display:flex;
+            flex-direction:column;
+            width: 100vw;
+            
+        }
+
+        main {
+            width: 100vw;
+            position: relative;
+            overflow: scroll;
+            min-height: 90vh;
         }
 
         button {
@@ -38,58 +54,68 @@
 
             margin-bottom: 5%;
 
-            font-size: 16px;
             cursor: pointer;
 
         }
 
         p {
-            font-size: 16px;
+            padding-left: 32px;
+            padding-right: 32px;
+            margin-bottom: 24px;
         }
 
-        .button-container {
-            width: 100%;
+        #body-text {
+            font-size: 3vmax;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+        }
+
+        p, button {
+            font-size: 2.5vmax;
+        }
+        
+        .last {
+            margin-bottom: 0;
         }
 
         .pick {
-
-            bottom: 0;
-            left: 0;
-            right: 0;
-
             border-radius: 0px;
             margin: 0px;
-            position: fixed;
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            height: 10vmax;
+            bottom: 0;
 
-            padding-top: 10px;
-            padding-bottom: 10px;
-            height: 42px;
-            z-index: 0;
+            width: 100%;
+
+            flex-shrink: 0;
+            flex-grow: 0;
+
+            font-style:italic;
+            font-size: 2vmax;
+        }
+
+        #pick {
+            z-index: 10;
         }
 
         h1 {
             text-transform: uppercase;
-            font-size: 32px;  
+            font-size: 3.5vmax;  
             margin-bottom: 8px;
-        }
-        
-        p {
-            padding-left: 32px;
-            padding-right: 32px;
+            flex-grow: 0;
         }
 
         .container {
-            display: flex;
-            justify-content: center;
+
+            min-height: 90vh;
+            display:flex;
             flex-direction: column;
-            margin-left: 0;
-            margin-right: 0;
-            height: 93vh;
-            padding: 20px;
+            
         }
 
-        p {
-            margin-bottom: 24px;
+        #question {
+            padding: 20px;
         }
 
         #imgcontainer {
@@ -99,30 +125,23 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            z-index: 3;
         }
 
-        .textcontainer {
+        .text-container {
             background-color: #131623;
             box-shadow: 0 0 3px #dedede;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            height: 100%;
+            padding: 16px;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+            flex-grow: 1;
             display: flex;
-            justify-content: center;
             flex-direction: column;
-        }
-
-        .half-vertical {
-            height: 50vh;
-            width: 100vw;
-            padding: 0;
+            justify-content: center;
         }
 
         img {
-            max-width: 65%;
-            max-height: 100%;
+            max-height: 30vh;
             padding-top: 10%;
             padding-bottom: 10%;
         }
@@ -131,13 +150,22 @@
             width: 100vw;
             height: 100vh;
             background-color: #212227;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             top: 0;
-            z-index: 1;
+            z-index: 10000;
             display: flex;
             justify-content: center;
             flex-direction: column;
+        }
+
+        #reply {
+            z-index: 20;
+        }
+
+        #close {
+            display: none;
+            z-index: 25;
         }
         </style>
 
@@ -151,34 +179,36 @@
             <h1>Indlæser...</h1>
             <h2>Vent venligst</h2>
         </div>
-        <main>
-            <div id="question" class="container">
-                <h1>Action</h1>
-                <p id="body-text"></p>
-                <div class="response-container">
-                    <button class="response" id="response1" onclick="respond(1)"></button>
-                    <button class="response" id="response2" onclick="respond(2)"></button>
-                    <button class="response" id="response3" onclick="respond(3)"></button>
-                    <button class="response" id="response4" onclick="respond(4)"></button>
-                </div>
-            </div>
-
-            <div id="reply">
-                <div class="half-vertical" id="imgcontainer">
-                    <img src="" id="correct-img"/>
-                </div>
-                <div class="half-vertical textcontainer">
-                    <div>
-                        <h1 id="correct-header"></h1>
-                        <p id="reply-text" class="body-text"></p>
+        <div class="page-container">
+            <main>
+                <div id="question" class="container">
+                    <h1>Action</h1>
+                    <p id="body-text"></p>
+                    <div class="response-container">
+                        <button class="response" id="response1" onclick="respond(1)"></button>
+                        <button class="response" id="response2" onclick="respond(2)"></button>
+                        <button class="response" id="response3" onclick="respond(3)"></button>
+                        <button class="response" id="response4" onclick="respond(4)"></button>
                     </div>
-                    
-                </div>       
-            </div>
+                </div>
 
-            
-        </main>
-        <div class="button-container"><button class="pick" id="pick" onclick="question()">Træk et nyt spørgsmål</button></div>
+                <div id="reply" class="container">
+                    <div id="imgcontainer">
+                        <img src="" id="correct-img"/>
+                    </div>
+                    <div class="text-container">
+                        <div>
+                            <h1 id="correct-header"></h1>
+                            <p id="reply-text" class="body-text"></p>
+                            <p id="action-queue" class="body-text last">Action queue</p>
+                        </div>
+                    </div>    
+                </div>
+            </main>
+            <button class="pick" id="pick" onclick="question()">Jeg har allerede besvaret spørgsmålet</button>
+            <button class="pick" id="close" onclick="luk()">Luk</button>
+        </div>
+        
     </body>
 
 
