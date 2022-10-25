@@ -6,7 +6,7 @@
         <title>Spørgsmålskort - Hackador</title>
         <style>
         * {
-            color: #B0B0B8;
+            color: #efdccf;
             text-align: center;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -22,40 +22,35 @@
             -o-background-size: cover;
             background-size: cover;
             overscroll-behavior: none;
-        }
 
-        .page-container {
-            display:flex;
-            flex-direction:column;
             width: 100vw;
-            
+            height: 100vh;
+            display:flex;
+            flex-direction: column;
         }
 
         main {
-            width: 100vw;
-            position: relative;
-            overflow: scroll;
-            min-height: 90vh;
+            display:flex;
+            flex-direction:column;
+            
+            flex-grow: 1;
         }
 
         button {
-            background-color: #212227; /* Background color is set in javascript */
+            background-color: rgb(34,32,29,0.28);
             
-            border:  none;
-            padding-left: 20px;
-            padding-right: 20px;
+            border: 2px solid #56524b;
+            border-radius: 6px;
+            
+            padding-left: 16px;
+            padding-right: 16px;
             padding-top: 16px;
             padding-bottom: 16px;
             width: 100%;
 
-            border-radius: 5px;
-
-            box-shadow: 0 0 6px #dedede;
-
-            margin-bottom: 5%;
+            margin-bottom: 16px;
 
             cursor: pointer;
-
         }
 
         p {
@@ -65,13 +60,14 @@
         }
 
         #body-text {
-            font-size: 3vmax;
-            padding-top: 5vh;
-            padding-bottom: 5vh;
+            font-size: 2.5vmax;
+            padding-left: 20px;
+            padding-right: 20px;
+            flex-grow: 1;
         }
 
         p, button {
-            font-size: 2.5vmax;
+            font-size: 2.3vmax;
         }
         
         .last {
@@ -79,20 +75,18 @@
         }
 
         .pick {
-            border-radius: 0px;
-            margin: 0px;
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            height: 10vmax;
-            bottom: 0;
+            height: auto;
+            margin: 1vh;
+            font-size: 1.8vmax;
+            bottom: 0px;
+            width: 80%;
+            background-color: rgb(0, 174, 229, 0.7);
+            color: #fff;
+        }
 
-            width: 100%;
-
-            flex-shrink: 0;
+        .pick-buttons {
             flex-grow: 0;
-
-            font-style:italic;
-            font-size: 2vmax;
+            height: auto;
         }
 
         #pick {
@@ -104,18 +98,28 @@
             font-size: 3.5vmax;  
             margin-bottom: 8px;
             flex-grow: 0;
+            color: orange;
         }
 
         .container {
-
-            min-height: 90vh;
             display:flex;
             flex-direction: column;
-            
+            align-items: center;
+            justify-content: center;
+            height: 100%;
         }
+
+        .response-container {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 75vh;
+        } 
 
         #question {
             padding: 20px;
+            flex-grow: 1;
         }
 
         #imgcontainer {
@@ -164,7 +168,6 @@
         }
 
         #close {
-            display: none;
             z-index: 25;
         }
         </style>
@@ -176,42 +179,39 @@
     <body>
         <!-- <img src="assets/bg_mobile.png" alt="" style="object-fit:cover" /> -->
         <div class="loader">
-            <h1>Indlæser...</h1>
+            <h1>Indlæser</h1>
             <h2>Vent venligst</h2>
         </div>
-        <div class="page-container">
-            <main>
-                <div id="question" class="container">
-                    <h1>Action</h1>
-                    <p id="body-text"></p>
-                    <div class="response-container">
-                        <button class="response" id="response1" onclick="respond(1)"></button>
-                        <button class="response" id="response2" onclick="respond(2)"></button>
-                        <button class="response" id="response3" onclick="respond(3)"></button>
-                        <button class="response" id="response4" onclick="respond(4)"></button>
-                    </div>
+        <main>
+            <div id="question">
+                <h1>Action</h1>
+                <div class="container">
+                    <div><p id="body-text"></p></div>
+                    <button class="response" id="response1" onclick="respond(1)"></button>
+                    <button class="response" id="response2" onclick="respond(2)"></button>
+                    <button class="response" id="response3" onclick="respond(3)"></button>
+                    <button class="response" id="response4" onclick="respond(4)"></button>
                 </div>
+            </div>
 
-                <div id="reply" class="container">
-                    <div id="imgcontainer">
-                        <img src="" id="correct-img"/>
-                    </div>
-                    <div class="text-container">
-                        <div>
-                            <h1 id="correct-header"></h1>
-                            <p id="reply-text" class="body-text"></p>
-                            <p id="action-queue" class="body-text last">Action queue</p>
-                        </div>
-                    </div>    
+            <div id="reply" class="container">
+                <div id="imgcontainer">
+                    <img src="" id="correct-img"/>
                 </div>
-            </main>
+                <div class="text-container">
+                    <h1 id="correct-header"></h1>
+                    <p id="reply-text" class="body-text"></p>
+                    <p id="action-queue" class="body-text last">Action queue</p>
+                </div>    
+            </div>
+        </main>
+
+        <div class="pick-buttons">
             <button class="pick" id="pick" onclick="question()">Jeg har allerede besvaret spørgsmålet</button>
             <button class="pick" id="close" onclick="luk()">Luk</button>
         </div>
         
     </body>
-
-
 </html>
 
 <script>

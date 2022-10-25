@@ -11,7 +11,12 @@ var buttonTextChanged = false;
 
 var replyDebug = false;
     
+
 question();
+
+$(document).ready(function () {
+    $('#close').hide();
+  });
 
 function question(){
       
@@ -122,6 +127,9 @@ function xmlParser(xml) {
             $("#response" +i).text == ""
         }
     }
+
+    // $('#response3').show();
+    // $('#response4').show();
 
 }
 
