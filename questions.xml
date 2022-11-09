@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xml>
     <question id="1">
-        <body-text>Din kollega hos en af jeres samarbejdspartnere ringer til dig, og har en kunde i den anden ende af røret. Det er en meget vigtig kunde og de skal hjælpes hurtigt. Din kollega har brug for at du også kaster et blik på sagen, som er vedhæftet i den mail han lige har sendt dig. Hvad gør du?</body-text>
+        <body-text>En kollega hos en af jeres samarbejdspartnere, som du ikke har snakket med før, ringer til dig, og har en kunde i den anden ende af røret. Det er en meget vigtig kunde og de skal hjælpes hurtigt. Din kollega har brug for at du også kaster et blik på sagen, som er vedhæftet i den mail han lige har sendt dig. Hvad gør du?</body-text>
         <responses>
             <response1 correct="false">
                 <text>Jeg tjekker filen med min kollega i røret, fordi der er nok sikkerhed i det, at vi taler sammen.</text>
@@ -293,6 +293,32 @@
             <response2 correct="true">
                 <text>Nej</text>
                 <reply>Nøglen er at kigge på mailadressen. <![CDATA[<]]>eboks-dk@noreply.dk<![CDATA[>]]> er ikke en adresse fra e-boks, men en adresse fra hjemmesiden noreply.dk, hvilket ikke nødvendigvis er en troværdig kilde. Hvis du er i tvivl, lad være med at klikke på links og log ind til e-boks på en anden måde, fx. ved at søge efter e-boks på en søgemaskine, som fx. Google.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="22">
+        <body-text>Hvilken af følgende påstande er sande?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Hvis du modtager en mail fra en kollega kan du godt klikke på indholdet, sålænge du har en opdateret antivirus og spam-blocker.</text>
+                <reply>Disse tiltage er gode at have med, men det kan ikke stå alene. Man skal også bruge sin sunde fornuft. Det kan være, fx. at dobbelttjekke, at afsenderens mailadresse er korrekt og at undersøge filtyperne på vedhæftede filer (fx. er .pdf, .docx som hovedregel OK, .exe er som regel ikke). Er du i tvivl kan du spørge en, som kender mere til IT end dig selv eller evt. søge på Google.</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Hvis du modtager en mail fra HR, som efterspørger personlige oplysninger, bør du altid sikre dig, at vedkommende er dem de udgiver sig for at være.</text>
+                <reply>Det kan eksempelvis være at dobbelttjekke afsenderens mailadresse. Skal man være ekstra sikker kan man altid lige bekræfte det med afsenderen personligt.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="23">
+        <body-text>Du er i lufthavnen og skal logge på WiFi. Hvad er mest sikkert?</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>At bruge dataforbindelsen på telefonen.</text>
+                <reply>Generelt set er det både mere privat og sikkert at bruge dataforbindelsen fra en telefon end offentlige WiFi-netværk, da mulige hackere kan 'lytte med' på, hvad man laver på offentlige WiFi-netværk. Hvis man skal bruge offentlig WiFi kan man dog reducere risikoen ved at bruge et virtuelt privat netværk (VPN). Her skal man dog være opmærksom på, at man skal stole på ejeren af VPN-tjenesten (fx. din arbejdsgiver), da de har mulighed for at kigge på netværkstrafikken.</reply>
+            </response1>
+            <response2 correct="false">
+                <text>At logge på lufthavnens sikre WiFi.</text>
+                <reply>Generelt set er det både mere privat og sikkert at bruge dataforbindelsen fra en telefon end offentlige WiFi-netværk, da mulige hackere kan 'lytte med' på, hvad man laver på offentlige WiFi-netværk. Hvis man skal bruge offentlig WiFi kan man dog reducere risikoen ved at bruge et virtuelt privat netværk (VPN). Her skal man dog være opmærksom på, at man skal stole på ejeren af VPN-tjenesten (fx. din arbejdsgiver), da de har mulighed for at kigge på netværkstrafikken.</reply>
             </response2>
         </responses>
     </question>
