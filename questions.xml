@@ -322,4 +322,173 @@
             </response2>
         </responses>
     </question>
+    <question id="24">
+        <body-text>Du er på forretningsrejse og har kun din arbejdscomputer med. Du modtager en mail fra e-boks med et vedhæftet dokument fra Københavns Kommune, som du for nyligt har været i kontakt med. Vil du åbne filen?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Ja</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Nej</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="25">
+        <body-text>Hvad er den bedste måde at beskytte sig selv mod Cyber angreb?</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>Kontakte din it-afdeling/it-ansvarlige og undersøge hvilke foranstaltninger de har etableret for at sikre jeres virksomhed mod cyber angreb</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="false">
+                <text>Hyre forskellige eksterne it-virksomheder der hver især klarer forskellige opgaver</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="26">
+        <body-text>Du modtager en e-mail fra "e-Boks.dk (eboks-dk@noreply.dk)" klikker du på linket i mailen?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Ja</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Nej</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="27">
+        <body-text>Du er på forretningsrejse og har kun din arbejdscomputer med. Du modtager en mail fra e-boks med en meddelelse om, at du har modtaget et dokument fra din kommune. Du kan tilgå dokumentet ved at logge ind på din e-boks. Hvad gør du?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Markér mailen som spam.</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Logger ind på min e-boks.</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="28">
+        <body-text>Hvad er 'Botnet'?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Et malware der gemmer sig som et dokument på din enhed, men som ikke kan blive opdaget ved hjælp af antivirus</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>En gruppe computere som kører ondsindede programmer som fra afstand bliver styret af Cyber kriminelle</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="29">
+        <body-text>Hvad er phishing?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Et Man-in-the-middle angreb</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Et forsøg på at franarre information</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="30">
+        <body-text>Hvad hedder følgende hacking metode: En hacker låser en bruger ude af deres computer og krypterer deres data og holder det som gidsel, indtil offeret går med til at betale det påkrævede beløb.</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Brute-force</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Ransomware</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="31">
+        <body-text>Hvad kalder man det interaktive stemmesvar system, der bruges til at genskabe en legitim kopi af en bank eller en anden institutions interaktive stemmesvar, hvor offeret bliver bedt til at ringe til for at “bekræfte” oplysninger?</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Phony</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Vishing</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="32">
+        <body-text>Sandt eller falsk: tech support scams er som regel målrettet større virksomheder</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Sandt</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Falsk</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="33">
+        <body-text>Sandt eller falsk: Kun medarbejdere med adgang til sensitive data skal trænes i fysisk sikkerhed af filer og enheder.</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Sandt</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="true">
+                <text>Falsk</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="34">
+        <body-text>Sandt eller falsk: at sætte sine software op til at opdatere automatisk er en måde at sikre sin virksomhed mod ransomware angreb?</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>Sandt</text>
+                <reply>Automatiske softwareopdateringer er en fin måde at beskytte imod ransomeware-angreb på, men de bør aldrig stå alene. Medarbejdere skal også kunne genkende og undgå mulige angreb. Vil man forbedre sine chancer yderligere bør man udarbejde en handlingsplan i fald det værste sker, og virksomhedens data bliver holdt som gidsel.</reply>
+            </response1>
+            <response2 correct="false">
+                <text>Falsk</text>
+                <reply>Automatiske softwareopdateringer er én måde at beskytte imod ransomeware-angreb på, men de bør aldrig stå alene. Medarbejdere skal også kunne genkende og undgå mulige angreb. Vil man forbedre sine chancer yderligere bør man udarbejde en handlingsplan i fald det værste sker, og virksomhedens data bliver holdt som gidsel.</reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="35">
+        <body-text>Sandt eller falsk: du kan undgå tech support scam ved udelukkende at modtage opkald fra etablerede it-support-firmaer.</body-text>
+        <responses>
+            <response1 correct="true">
+                <text>Sandt</text>
+                <reply></reply>
+            </response1>
+            <response2 correct="false">
+                <text>Falsk</text>
+                <reply></reply>
+            </response2>
+        </responses>
+    </question>
+    <question id="36">
+        <body-text>Sandt eller falsk: Hvis browseren viser en hængelås ved siden af adressen er forbindelsen sikker og man kan logge ind uden bekymring.</body-text>
+        <responses>
+            <response1 correct="false">
+                <text>Sandt</text>
+                <reply>Hængelåsen (som indikerer et gyldigt SLL-certifikat og kryptering med HTTPS) er blot ét tegn man skal lede efter. Man skal også holde øje med, at webadressen er korrekt. Hold især øje med bogstaver, som let kan forveksles med andre (fx. m & rn, í & i, 0 & O, l & I og endda det kyrilliske а & vore latin a).</reply>
+            </response1>
+            <response2 correct="true">
+                <text>Falsk</text>
+                <reply>Hængelåsen (som indikerer et gyldigt SLL-certifikat og kryptering med HTTPS) er blot ét tegn man skal lede efter. Man skal også holde øje med, at webadressen er korrekt. Hold især øje med bogstaver, som let kan forveksles med andre (fx. m & rn, í & i, 0 & O, l & I og endda det kyrilliske а & vore latin a).</reply>
+            </response2>
+        </responses>
+    </question>
 </xml>
