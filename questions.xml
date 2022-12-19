@@ -483,11 +483,11 @@
         <responses>
             <response1 correct="false">
                 <text>Sandt</text>
-                <reply>Hængelåsen (som indikerer et gyldigt SLL-certifikat og kryptering med HTTPS) er blot ét tegn man skal lede efter. Man skal også holde øje med, at webadressen er korrekt. Hold især øje med bogstaver, som let kan forveksles med andre (fx. m & rn, í & i, 0 & O, l & I og endda det kyrilliske а & vore latin a).</reply>
+                <reply>Hængelåsen (som indikerer et gyldigt SLL-certifikat og kryptering med HTTPS) er blot ét tegn man skal lede efter. Man skal også holde øje med, at webadressen er korrekt. Hold især øje med bogstaver, som let kan forveksles med andre (fx. m &amp; rn, i &amp; i, 0 &amp; O, l &amp; I).</reply>
             </response1>
             <response2 correct="true">
                 <text>Falsk</text>
-                <reply>Hængelåsen (som indikerer et gyldigt SLL-certifikat og kryptering med HTTPS) er blot ét tegn man skal lede efter. Man skal også holde øje med, at webadressen er korrekt. Hold især øje med bogstaver, som let kan forveksles med andre (fx. m & rn, í & i, 0 & O, l & I og endda det kyrilliske а & vore latin a).</reply>
+                <reply></reply>
             </response2>
         </responses>
     </question>
