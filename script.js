@@ -1,51 +1,66 @@
-var lower = 1;
+var minimumQuestionNumber = 1;
 var isStarted = false;
 var id;
 var selected = false;
 var defaultButton = "#212227";
 var wrongColor = "#B70002";
 var rightColor = "#07ADE3";
-var xml = null;
-var path = "questions.xml"
+var json = null;
+var url = "questions.json"
 var buttonTextChanged = false;
+var drawnQuestion;
 
 var replyDebug = false;
     
 
 question();
 
-$(document).ready(function () {
+
+
+$(document).ready(function() {
     $('#close').hide();
+    $('#response1').click(function() {
+      respond(1);
+    });
+  
+    $('#response2').click(function() {
+      respond(2);
+    });
+  
+    $('#response3').click(function() {
+      respond(3);
+    });
+  
+    $('#response4').click(function() {
+      respond(4);
+    });
   });
 
 function question(){
       
-    if (xml == null) {
+    if (json == null) {
         console.log("running ajax request");
-        $.ajax({
-            'type': "GET",
-            'url': path,
-            'dataType': "xml",
-            'success': function(data) { 
-                useReturnData(data); 
-                if (xml == null) {
-                    console.error("xml is null");
-                }
-                else {
-                    console.log("running xml parser");
-                    xmlParser(xml);
-                }
-            }
-        });
 
-        upper = ($(xml).find("question").length);
+        $.getJSON(url, function(data) {
+            useReturnData(data);
+            if (json == null) {
+              console.error("json is null");
+            }
+            else {
+              console.log("running json parser");
+              console.log(data);
+              jsonParser(json);
+            }
+          });
+
+        maximumQuestionNumber = ($(json).find("question").length);
     }
     else {
-        xmlParser(xml);
+        jsonParser(json);
     } 
 }
 
-function luk(){
+function closeElements(){
 
     $('#reply').hide();
     $('#close').hide();
@@ -56,81 +71,73 @@ function luk(){
 }
 
 function useReturnData(data){
-    xml = data;
-    console.log(xml);
+    json = data;
 }
 
 function rand() {
-    var randnum = Math.floor(Math.random()*(upper-lower))+lower;
-    console.log("Getting random number " + randnum + " between " +lower+ " and " +(upper-1));
+    var randnum = Math.floor(Math.random()*(maximumQuestionNumber-minimumQuestionNumber))+minimumQuestionNumber;
+    console.log("Getting random number " + randnum + " between " +minimumQuestionNumber+ " and " +(maximumQuestionNumber-1));
     return randnum;
 }
 
+function jsonParser(json) {
+  maximumQuestionNumber = json.length + 1;
 
-function xmlParser(xml) {
+  // If they haven't picked yet, choose a random question
+  if(!isStarted) {
+    $(isStarted = true);
+    id = rand();
+  }
 
-     
-    upper = ($(xml).find("question").length +1);
-
-    // If they haven't picked yet, choose a random question
-    if(!isStarted) {
-        $(isStarted = true);
-        id = rand();
+  // If they have, keep choosing new questions until you get one that isn't the same as the last one.
+  else {
+    do {
+      newID = rand();
     }
+    while (newID == id);
+    id = newID;
 
-    // If they have, keep choosing new questions until you get one that isn't the same as the last one.
+    // Allow the user to select a new answer
+    selected = false;
+
+    resetButtons();
+
+    $("#reply-text").text("");
+    $("#correct-header").text("");
+    $("#reply").hide();
+  }
+
+  // Find the chosen question
+  drawnQuestion = json[id];
+
+  if (!replyDebug) {
+    $('#question').show();
+    $('#reply').hide();
+  }
+  else{
+    respond(1);
+    $('#question').hide();
+    $('#reply').show();
+  }
+
+  if (buttonTextChanged) {
+    $('#pick').text("Jeg har allerede besvaret spørgsmålet");
+    buttonTextChanged = false;
+  }
+
+  $("#body-text").text(drawnQuestion.bodytext);
+  for(let i = 1; i<5; i++){
+    r = fetchResponse(i);
+
+    if (r) {
+      $('#response' +i).text(r);
+      $('#response' +i).show();
+    }
     else {
-        do {
-            newID = rand();
-        }
-        while (newID == id);
-        id = newID;
-
-        // Allow the user to select a new answer
-        selected = false;
-
-        resetButtons();
-
-        $("#reply-text").text("");
-        $("#correct-header").text("");
-        $("#reply").hide();
+      $('#response' +i).hide();
+      $("#response" +i).text == ""
     }
-
-    // Find the chosen question
-    $question = $(xml).find('question[id="' + id + '"]')
-
-    if (!replyDebug) {
-        $('#question').show();
-        $('#reply').hide();
-    }
-    else{
-        respond(1);
-        $('#question').hide();
-        $('#reply').show();
-    }
-
-    if (buttonTextChanged) {
-        $('#pick').text("Jeg har allerede besvaret spørgsmålet");
-        buttonTextChanged = false;
-    }
-
-    $("#body-text").text($question.find("body-text").text());
-    for(let i = 1; i<5; i++){
-        r = fetchResponse(i)
-
-        if (r) {
-            $('#response' +i).text(r);
-            $('#response' +i).show();
-        }
-        else {
-            $('#response' +i).hide();
-            $("#response" +i).text == ""
-        }
-    }
-
-    // $('#response3').show();
-    // $('#response4').show();
-
+  }
 }
 
 function resetButtons(){
@@ -171,7 +178,21 @@ function respond(id){
 }
 
 function checkCorrect(id){
-    correct = $question.find("response" +id).attr("correct");
+
+    var corrects = [
+        drawnQuestion.responses.response1.correct,
+        drawnQuestion.responses.response2.correct,
+    ];
+
+    if ("response3" in drawnQuestion.responses) {
+        corrects.push(drawnQuestion.responses.response3.correct);
+    }
+
+    if ("response4" in drawnQuestion.responses) {
+        corrects.push(drawnQuestion.responses.response4.correct);
+    }
+
+    correct = corrects[id - 1];
     if (correct){
         return correct;
     }
@@ -182,24 +203,42 @@ function checkCorrect(id){
 }
 
 function fetchReply(id){
-    reply = $question.find("response" +id).find("reply").text();
-    if (reply){
-        return reply;
+    // create an array of response data
+    var replies = [
+        drawnQuestion.responses.response1.reply,
+        drawnQuestion.responses.response2.reply
+    ];
+
+    if ("response3" in drawnQuestion.responses) {
+        replies.push(drawnQuestion.responses.response3.reply);
     }
-    else  {
-        console.log("Error: Value 'reply' is false.")
+
+    if ("response4" in drawnQuestion.responses) {
+        replies.push(drawnQuestion.responses.response4.reply);
     }
+    
+      // return the response data for the specified id, or null if it is undefined
+      return replies[id - 1] || null;
 }
 
-function fetchResponse(id){
-    response = $question.find("response" +id).find("text").text();
-    if (response){
-        return response;
+function fetchResponse(id) {
+    // create an array of response data
+    var responses = [
+      drawnQuestion.responses.response1.text,
+      drawnQuestion.responses.response2.text
+    ];
+
+    if ("response3" in drawnQuestion.responses) {
+        responses.push(drawnQuestion.responses.response3.text);
     }
-    else  {
-        return false;
+
+    if ("response4" in drawnQuestion.responses) {
+        responses.push(drawnQuestion.responses.response4.text);
     }
-}
+  
+    // return the response data for the specified id, or null if it is undefined
+    return responses[id - 1] || null;
+  }
 
 function response1() {
     respond(1);
@@ -217,16 +256,16 @@ function response4(){
     respond(4);
 }
 
-function xmlToString(xmlData) { 
+function jsonToString(jsonData) { 
 
-    var xmlString;
+    var jsonString;
     //IE
     if (window.ActiveXObject){
-        xmlString = xmlData.xml;
+        jsonString = jsonData.json;
     }
     // code for Mozilla, Firefox, Opera, etc.
     else{
-        xmlString = (new XMLSerializer()).serializeToString(xmlData);
+        jsonString = (new jsonSerializer()).serializeToString(jsonData);
     }
-    return xmlString;
+    return jsonString;
 }   
