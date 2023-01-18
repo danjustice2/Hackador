@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Generator</title>
+  <script>
+    function generateJSON() {
+      // Get the inputs
+      var bodytext = document.getElementById("bodytext").value;
+      var response1 = document.getElementById("response1").value;
+      var response2 = document.getElementById("response2").value;
+      var response3 = document.getElementById("response3").value;
+      var response4 = document.getElementById("response4").value;
+      var correct1 = document.getElementById("correct1").checked;
+      var correct2 = document.getElementById("correct2").checked;
+      var correct3 = document.getElementById("correct3").checked;
+      var correct4 = document.getElementById("correct4").checked;
+      var reply1 = document.getElementById("reply1").value;
+      var reply2 = document.getElementById("reply2").value;
+      var reply3 = document.getElementById("reply3").value;
+      var reply4 = document.getElementById("reply4").value;
+
+      // Generate the JSON
+      var json = {
+        "bodytext": bodytext,
+        "responses": {
+          "response1": {
+            "correct": correct1,
+            "text": response1,
+            "reply": reply1
+          },
+          "response2": {
+            "correct": correct2,
+            "text": response2,
+            "reply": reply2
+          }
+        }
+      };
+
+      // Add the optional responses
+      if (response3) {
+        json.responses.response3 = {
+          "correct": correct3,
+          "text": response3,
+          "reply": reply3
+        };
+      }
+      if (response4) {
+        json.responses.response4 = {
+          "correct": correct4,
+          "text": response4,
+          "reply": reply4
+        };
+      }
+
+      // Output the JSON
+      console.log(JSON.stringify(json));
+    }
+  </script>
+</head>
+<body>
+  <h1>JSON Generator</h1>
+  <form>
+    <label>Question Text:</label>
+    <input type="text" id="bodytext" />
+    <br />
+    <label>Response 1:</label>
+    <input type="text" id="response1" />
+    <input type="checkbox" id="correct1" />
+    <label>Correct?</label>
+    <br />
+    <label>Reply 1:</label>
+    <input type="text" id="reply1" />
+    <br />
+    <label>Response 2:</label>
+    <input type="text" id="response2" />
+    <input type="checkbox" id="correct2" />
+    <label>Correct?</label>
+    <br />
+    <label>Reply 2:</label>
+    <input type="text" id="reply2" />
+    <br />
+    <label>Response 3:</label>
+    <input type="text" id="response3" />
+    <input type="checkbox" id="correct3" />
+    <label>Correct?</label>
+    <br />
+    <label>Reply 3:</label>
+    <input type="text" id="reply3" />
+    <br />
+    <label>Response 4:</label>
+    <input type="text" id="response4" />
+    <input type="checkbox" id="correct4" />
+    <label>Correct?</label>
+    <br />
+    <label>Reply 4:</label>
+    <input type="text" id="reply4" />
+    <br />
+    <input type="button" value="Generate JSON" onclick="generateJSON()" />
+  </form>
+</body>
+</html>

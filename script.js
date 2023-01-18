@@ -1,98 +1,83 @@
-var minimumQuestionNumber = 1;
-var isStarted = false;
-var id;
-var selected = false;
-var defaultButton = "#212227";
-var wrongColor = "#B70002";
-var rightColor = "#07ADE3";
-var json = null;
-var url = "questions.json"
-var buttonTextChanged = false;
-var drawnQuestion;
-
-var replyDebug = false;
+const minimumQuestionNumber = 1;
+let isStarted = false;
+let id;
+let selected = false;
+const defaultButton = "#212227";
+const wrongColor = "#B70002";
+const rightColor = "#07ADE3";
+let json = null;
+const url = "questions.json"
+let buttonTextChanged = false;
+let drawnQuestion;
+const replyDebug = false;
     
-
-question();
-
 
 
 $(document).ready(function() {
+    Question();
     $('#close').hide();
-    $('#response1').click(function() {
-      respond(1);
-    });
-  
-    $('#response2').click(function() {
-      respond(2);
-    });
-  
-    $('#response3').click(function() {
-      respond(3);
-    });
-  
-    $('#response4').click(function() {
-      respond(4);
-    });
+    $('#response1').click(() => Respond(1));
+    $('#response2').click(() => Respond(2));
+    $('#response3').click(() => Respond(3));
+    $('#response4').click(() => Respond(4));
   });
 
-function question(){
+function Question(){
       
     if (json == null) {
         console.log("running ajax request");
 
         $.getJSON(url, function(data) {
-            useReturnData(data);
+            UseReturnData(data);
             if (json == null) {
               console.error("json is null");
             }
             else {
               console.log("running json parser");
               console.log(data);
-              jsonParser(json);
+              JsonParser(json);
             }
           });
 
         maximumQuestionNumber = ($(json).find("question").length);
     }
     else {
-        jsonParser(json);
+        JsonParser(json);
     } 
 }
 
-function closeElements(){
-
-    $('#reply').hide();
-    $('#close').hide();
-    $('#question').hide();
-    $('#pick').text("Træk nyt spørgsmål");
-    buttonTextChanged = true;
-    $('#pick').show();
+const CloseElements = () => {
+  $('#reply').hide();
+  $('#close').hide();
+  $('#question').hide();
+  $('#pick').hide();
+  buttonTextChanged = true;
+  $('#pick-new').show();
 }
 
-function useReturnData(data){
+const UseReturnData = data => {
     json = data;
 }
 
-function rand() {
+function Rand() {
     var randnum = Math.floor(Math.random()*(maximumQuestionNumber-minimumQuestionNumber))+minimumQuestionNumber;
     console.log("Getting random number " + randnum + " between " +minimumQuestionNumber+ " and " +(maximumQuestionNumber-1));
     return randnum;
 }
 
-function jsonParser(json) {
+const JsonParser = json => {
   maximumQuestionNumber = json.length + 1;
 
   // If they haven't picked yet, choose a random question
   if(!isStarted) {
     $(isStarted = true);
-    id = rand();
+    id = Rand();
   }
 
   // If they have, keep choosing new questions until you get one that isn't the same as the last one.
   else {
     do {
-      newID = rand();
+      newID = Rand();
     }
     while (newID == id);
     id = newID;
@@ -100,7 +85,7 @@ function jsonParser(json) {
     // Allow the user to select a new answer
     selected = false;
 
-    resetButtons();
+    ResetButtons();
 
     $("#reply-text").text("");
     $("#correct-header").text("");
@@ -115,7 +100,7 @@ function jsonParser(json) {
     $('#reply').hide();
   }
   else{
-    respond(1);
+    Respond(1);
     $('#question').hide();
     $('#reply').show();
   }
@@ -127,7 +112,7 @@ function jsonParser(json) {
 
   $("#body-text").text(drawnQuestion.bodytext);
   for(let i = 1; i<5; i++){
-    r = fetchResponse(i);
+    r = FetchResponse(i);
 
     if (r) {
       $('#response' +i).text(r);
@@ -140,7 +125,7 @@ function jsonParser(json) {
   }
 }
 
-function resetButtons(){
+function ResetButtons(){
     for(let i = 1; i<5; i++){
         $("#response" +i).text("");
     }
@@ -148,14 +133,14 @@ function resetButtons(){
 
 
 
-function respond(id){
+function Respond(id){
     if (!selected){ // Only execute if the user hasn't already selected an answer to this question.
 
         selected = true; // Indicate that the user has selected so they can't select again
 
-        $("#reply-text").text(fetchReply(id));
+        $("#reply-text").text(FetchReply(id));
 
-        if (checkCorrect(id) == "false"){ 
+        if (CheckCorrect(id) == "false"){ 
             $('#correct-header').css('color', wrongColor);
             $('#correct-header').text("Forkert");
             $('#correct-img').attr("src", "assets/RedLock.svg");
@@ -174,10 +159,11 @@ function respond(id){
 
         $('#question').hide();
         $('#pick').hide();
+        $('#pick-new').hide();
     }
 }
 
-function checkCorrect(id){
+function CheckCorrect(id){
 
     var corrects = [
         drawnQuestion.responses.response1.correct,
@@ -202,7 +188,7 @@ function checkCorrect(id){
     
 }
 
-function fetchReply(id){
+function FetchReply(id){
     // create an array of response data
     var replies = [
         drawnQuestion.responses.response1.reply,
@@ -221,7 +207,7 @@ function fetchReply(id){
       return replies[id - 1] || null;
 }
 
-function fetchResponse(id) {
+function FetchResponse(id) {
     // create an array of response data
     var responses = [
       drawnQuestion.responses.response1.text,
@@ -240,23 +226,23 @@ function fetchResponse(id) {
     return responses[id - 1] || null;
   }
 
-function response1() {
-    respond(1);
+function Response1() {
+    Respond(1);
 }
 
-function response2() {
-    respond(2);
+function Response2() {
+    Respond(2);
 }
 
-function response3(){
-    respond(3);
+function Response3(){
+    Respond(3);
 }
 
-function response4(){
-    respond(4);
+function Response4(){
+    Respond(4);
 }
 
-function jsonToString(jsonData) { 
+function JsonToString(jsonData) { 
 
     var jsonString;
     //IE
