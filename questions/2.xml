@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <question>
+        <body-text>Du arbejder som bogholder og er informeret om, at I har et samarbejde i gang med en design virksomhed, og bogholderiet afventer en faktura på første halvdel af betalingen. I modtager en mail fra virksomheden om, at I kan få 10% rabat, hvis I betaler hele beløbet forude. Mailadressen er korrekt. Hvad gør du? </body-text>
+        <responses>
+            <response1 correct="true">
+                <text>Jeg ringer til design virksomheden og får rabatten bekræftet. </text>
+                <reply>Designvirksomhedens e-mail kan være hacket, og beløbsmodtageren kan i dette tilfælde være hackeren.</reply>
+            </response1>
+            <response2 correct="false">
+                <text>Jeg konsulterer med direktionen og betaler, hvis direktionen godkender.</text>
+                <reply>Hvis ikke der foreligger sådan en aftale, så ring til designvirksomheden og få det bekræftet. Deres mail kan være hacket.</reply>
+            </response2>
+        </responses>
+    </question>
+</xml>

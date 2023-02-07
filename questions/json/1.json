@@ -1,0 +1,15 @@
+{
+   "body-text": "Din kollega hos en af jeres samarbejdspartnere ringer til dig, og har en kunde i den anden ende af røret. Det er en meget vigtig kunde og de skal hjælpes hurtigt. Din kollega har brug for at du også kaster et blik på sagen, som er vedhæftet i den mail han lige har sendt dig. Hvad gør du?",
+   "responses": {
+      "response1": {
+         "text": "Jeg tjekker filen med min kollega i røret, fordi der er nok sikkerhed i det, at vi taler sammen.",
+         "reply": "Hvis det ikke er en kollega du taler med jævnligt, kan du ikke være sikker på, at personen ikke er en hacker. Vent hellere til du har ro til at se på alle detaljer på mailen, inden du downloader/åbner filen. Hvis du er i tvivl, så ring til jeres samarbejdspartner selv og dobbelttjek.",
+         "_correct": "false"
+      },
+      "response2": {
+         "text": "Jeg kaster et blik på mailen, når jeg har ro til at være omhyggelig.",
+         "reply": "Hackere vil forsøge at stresse dig, og lige så snart du har åbnet/downloadet filen, så har de adgang til din computer.",
+         "_correct": "true"
+      }
+   }
+}
