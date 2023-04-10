@@ -1,20 +1,5 @@
 [
   {
-    "bodytext": "En kollega hos en af jeres samarbejdspartnere, som du ikke har snakket med før, ringer til dig, og har en kunde i den anden ende af røret. Det er en meget vigtig kunde og de skal hjælpes hurtigt. Din kollega har brug for at du også kaster et blik på sagen, som er vedhæftet i den mail han lige har sendt dig. Hvad gør du?",
-    "responses": {
-      "response1": {
-        "correct": "false",
-        "text": "Jeg tjekker filen med min kollega i røret, fordi der er nok sikkerhed i det, at vi taler sammen.",
-        "reply": "Hvis det ikke er en kollega du taler med jævnligt, kan du ikke være sikker på, at personen ikke er en hacker. Vent hellere til du har ro til at se på alle detaljer på mailen, inden du downloader/åbner filen. Hvis du er i tvivl, så ring til jeres samarbejdspartner selv og dobbelttjek."
-      },
-      "response2": {
-        "correct": "true",
-        "text": "Jeg kaster et blik på mailen, når jeg har ro til at være omhyggelig.",
-        "reply": "Hackere vil forsøge at stresse dig, og lige så snart du har åbnet/downloadet filen, så har de adgang til din computer."
-      }
-    }
-  },
-  {
     "bodytext": "Du arbejder som bogholder og er informeret om, at I har et samarbejde i gang med en design virksomhed, og bogholderiet afventer en faktura på første halvdel af betalingen. I modtager en mail fra virksomheden om, at I kan få 10% rabat, hvis I betaler hele beløbet forude. Mailadressen er korrekt. Hvad gør du?",
     "responses": {
       "response1": {
@@ -65,17 +50,17 @@
     }
   },
   {
-    "bodytext": "Hvad betyder spoofing?",
+    "bodytext": "Hvad betyder Spoofing?",
     "responses": {
       "response1": {
         "correct": "false",
         "text": "Hackere ligger sig som skygge over din pc og overvåger alt du foretager dig.",
-        "reply": "Den slags angreb plejer man at kalde spyware. Spoofing er, når man udgiver sig for at være en mail, telefonnummer, hjemmeside eller person som man ikke er. Dette skal dog ikke forveksles med phishing (at lokke en person til at overrække fortrolige oplysninger el.). Spoofing er en metode, som kan bruges til phishing. Metoder kan dog også bruges til andre ting, som fx. at lokke dig til at installere malware."
+        "reply": "Spoofing refererer til situationer, hvor hackere udgiver sig for at være en anden person eller enhed, for at narre ofre til at udføre handlinger, de ellers ikke ville have gjort."
       },
       "response2": {
         "correct": "true",
-        "text": "At hackere udgiver sig for at være en mail, telefonnummer, hjemmeside eller person de ikke er, for at lokke dig til at gøre noget du ellers ikke ville have gjort, eksempelvis udlevere information.",
-        "reply": "Spoofing er dog ikke det samme som phishing. Phishing er blot én type angreb, som kan udføres ved hjælp af spoofing. Spoofing kan også bruges til fx. at lokke dig til at installere malware."
+        "text": "At hackere udgiver sig for at være en anden end de er (fx. mail, telefon nummer, hjemmeside), for at lokke dig til at gøre noget du ellers ikke ville have gjort, eksempelvis udlevere information.",
+        "reply": "Spoofing er en teknik, hvor hackere udgiver sig for at være en anden person, virksomhed eller tjeneste for at narre ofre til at udføre handlinger eller udlevere følsomme oplysninger. Dette kan ske via e-mails, telefonopkald, hjemmesider og andre kommunikationsmetoder."
       }
     }
   },
@@ -90,6 +75,11 @@
       "response2": {
         "correct": "true",
         "text": "Kontakter jeres it-leverandør for at oprette en separate internetforbindelse til videoovervågningen",
+        "reply": "Imens det kan være meget praktisk at kunne kigge på overvågningen udefra kan det også være meget risikabelt, alt efter hvordan systemet bliver sat op. Derfor anbefales det som hovedregel, at man kontakter rådfører sig med en troværdig it-leverandør, når det angår sådanne sager."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "Uploader optagelserne til en passwordbeskyttede cloudløsning",
         "reply": "Imens det kan være meget praktisk at kunne kigge på overvågningen udefra kan det også være meget risikabelt, alt efter hvordan systemet bliver sat op. Derfor anbefales det som hovedregel, at man kontakter rådfører sig med en troværdig it-leverandør, når det angår sådanne sager."
       }
     }
@@ -115,12 +105,17 @@
       "response1": {
         "correct": "false",
         "text": "Et angreb der går så hurtigt, at de nedlægger systemet på under en dag.",
-        "reply": "En af grundene til, at det er så svært at beskytte sig imod cyberangreb er, at nye sikkerhedshuller bliver skabt og opdaget hele tiden. Et Zero-day-angreb er et angreb, som udnytter et sikkerhedshul, som aldrig er blevet opdaget før. Det er på 'zero-day' hvor potentialet for skade er allehøjest, da ingen har nået at 'lappe' hullet i deres sikkerhed endnu."
+        "reply": "Dette er ikke en korrekt beskrivelse af et Zero-day-angreb. Et Zero-day-angreb refererer til situationer, hvor angribere udnytter et ukendt sikkerhedshul i software eller systemer, før udviklerne har haft mulighed for at rette fejlen."
       },
       "response2": {
         "correct": "true",
         "text": "Hackere udnytter huller i et system eller software, som ikke er set før.",
-        "reply": "En af grundene til, at det er så svært at beskytte sig imod cyberangreb er, at nye sikkerhedshuller bliver skabt og opdaget hele tiden. Det er på 'zero-day' hvor potentialet for skade er allehøjest, da ingen har nået at 'lappe' hullet i deres sikkerhed endnu."
+        "reply": "Korrekt, et Zero-day-angreb sker, når hackere udnytter et hidtil ukendt sikkerhedshul i systemer eller software. Da udviklerne endnu ikke er opmærksomme på sårbarheden, er der ikke udviklet en rettelse, hvilket gør det vanskeligt at beskytte sig mod angrebet."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "Et angreb som sker, samme dag, som en virksomhed (fx. Microsoft) opdaterer deres software",
+        "reply": "Dette er ikke nødvendigvis et Zero-day-angreb. Selvom angrebet kan ske samme dag, som en virksomhed opdaterer deres software, er et Zero-day-angreb kendetegnet ved at udnytte ukendte sikkerhedshuller, som udviklerne endnu ikke har haft mulighed for at rette."
       }
     }
   },
@@ -144,18 +139,22 @@
     "responses": {
       "response1": {
         "correct": "false",
-        "text": "Jeg beder om at se mandens legitimation og viser ham ind.",
+        "text": "Jeg beder om at se mandens legitimation",
         "reply": "Det er en rigtig god idé at bede om legitimation, hvis der er tale om et ventet besøget. At give fysisk adgang til servere er dog en alvorlig sag. Derfor er det vigtigt, at man er 100% sikker på, at vedkommende faktisk har tilladelse til komme ind."
       },
       "response2": {
+        "correct": "false",
+        "text": "Jeg kontakter it-afdelingen og spørger, om der er problemer med serveren - hvis ja, lukker jeg ham ind",
+        "reply": "At der er problemer med serveren, er ikke ensbetydende med, at der er bestilt en tekniker eller at han er den rigtige."
+      },
+      "response3": {
         "correct": "true",
-        "text": "Jeg beder manden om at vente, imens jeg kontakter it-afdelingen for at bekræfte, at reperationen er blevet tilkaldt.",
-        "reply": "At give fysisk adgang til servere er dog en alvorlig sag. Derfor er det vigtigt, at man er helt sikker på, at vedkommende må komme ind. Efterfølgende kan det også være en god idé at tjekke legitimation som en ekstra sikkerhed."
+        "text": "Jeg kontakter it-afdelingen og beder dem om at hente Peter Hansen i receptionen",
+        "reply": "Hvis it-afdelingen har bestilt en tekniker, bør de selv hente ham og lukke ham ind."
       }
     }
   },
   {
-    
     "bodytext": "Hvad er ransomware?",
     "responses": {
       "response1": {
@@ -171,7 +170,6 @@
     }
   },
   {
-    
     "bodytext": "Hvilken af de følgende angrebsmetoder bruges bl.a. til at nedlægge hjemmesider?",
     "responses": {
       "response1": {
@@ -187,7 +185,6 @@
     }
   },
   {
-    
     "bodytext": "Hvad kalder man et system, som overvåger og regulerer indgående og udgående nettrafik?",
     "responses": {
       "response1": {
@@ -203,7 +200,21 @@
     }
   },
   {
-    
+    "bodytext": "Du modtager en e-mail fra e-boks, hvor det står, at du har modtaget et dokument fra din kommune. Hvordan vil du tilgå dokumentet?",
+    "responses": {
+      "response1": {
+        "correct": "false",
+        "text": "Markér mailen som spam.",
+        "reply": "Det er ikke nødvendigvis en god idé at markere mailen som spam, da det kun vil flytte mailen til spam-mappen og ikke nødvendigvis forhindre, at svindlere fortsætter med at sende lignende e-mails i fremtiden. Det er bedre at logge ind på din e-boks direkte fra platformens hjemmeside for at sikre, at dokumentet er legitimt og beskytte dig mod online-svindel."
+      },
+      "response2": {
+        "correct": "true",
+        "text": "Logge ind på min e-boks.",
+        "reply": "Den bedste praksis for at tilgå dokumenter fra e-boks er at logge ind direkte på platformens hjemmeside for at sikre, at dokumentet er legitimt og beskytte dig mod online-svindel. På denne måde kan du også sikre, at du altid har adgang til din e-boks og dens indhold, uanset hvor du er og hvilken enhed du bruger."
+      }
+    }
+  },
+  {
     "bodytext": "Hvad er Brute-force?",
     "responses": {
       "response1": {
@@ -224,7 +235,6 @@
     }
   },
   {
-    
     "bodytext": "Hvad er en Watering Hole Attack?",
     "responses": {
       "response1": {
@@ -235,12 +245,11 @@
       "response2": {
         "correct": "true",
         "text": "En hacking strategi, hvor hackere inficerer en eller flere hjemmesider, som er hyppigt besøgt af medarbejdere i en organisation.",
-        "reply": "Her forsøger hackere målrettet at inficere hjemmesider med malware i et forsøg på at ramme organisationen udefra. Der kan være mange grunde til at en hackere kunne have lyst til at vælge denne metode, bl.a. at man har lettere ved at snyde sin vej ind til de pågældende hjemmesider."
+        "reply": "Her forsøger hackere målrettet at inficere hjemmesider med malware i et forsøg på at ramme organisationen udefra. Der kan være mange grunde til at en hacker kunne have lyst til at vælge denne metode, bl.a. at man har lettere ved at snyde sin vej ind til de pågældende hjemmesider."
       }
     }
   },
   {
-    
     "bodytext": "Sandt eller falsk: kryptering hjælper med at opdage cyber-angreb i dit system.",
     "responses": {
       "response1": {
@@ -256,7 +265,6 @@
     }
   },
   {
-    
     "bodytext": "Sandt eller falsk: Hvis du bliver udsat for et ransomware-angreb, er det første du skal gøre, er at betale hackerne? (Et ransomware-angreb e)",
     "responses": {
       "response1": {
@@ -272,7 +280,6 @@
     }
   },
   {
-    
     "bodytext": "Sandt eller falsk: Hvis du bliver udsat for et ransomware-angreb, er det første du skal gøre, er at betale hackerne? (Et ransomware-angreb e)",
     "responses": {
       "response1": {
@@ -288,12 +295,11 @@
     }
   },
   {
-    
-    "bodytext": "Du modtager en mail fra jeres HR, som skal bruge dit CPR-nummer til at bestille billetter til en forretningsrejse. Hvad gør du?",
+    "bodytext": "Du modtager en mail fra jeres personaleafdeling, som skal bruge dit CPR-nummer til at bestille billetter til en forretningsrejse. Hvad gør du?",
     "responses": {
       "response1": {
         "correct": "true",
-        "text": "Ringer til HR, fordi man ikke skal bruge CPR-nummer for at bestille flybilletter.",
+        "text": "Ringer til personaleafdelingen, fordi man ikke skal bruge CPR-nummer for at bestille flybilletter.",
         "reply": "Udover at et CPR-nummer ikke er nødvendigt for at bestille flybilletter vil dit firmas HR-afdeling sandsynligvis allerede kende dit CPR-nummer."
       },
       "response2": {
@@ -304,7 +310,6 @@
     }
   },
   {
-    
     "bodytext": "Du sidder i toget på vej til en konference. Du har glemt din oplader til din telefon derhjemme. Personen ved siden af dig spørger om du vil låne deres kabel, som kosmetisk ser \"ægte” ud. Hvilke risici er der forbundet med at låne en fremmedes kabel?",
     "responses": {
       "response1": {
@@ -314,45 +319,27 @@
       },
       "response2": {
         "correct": "true",
-        "text": "De kan installere en virus på min computer og styre den fra alle steder i verden.",
-        "reply": "Flashdreve kan være så små, at de kunne sættes inden i et USB-kabel og inficere enheder, som de kommer i kontakt med. Sandsynligheden for at det er tilfældet her er lav. Nogle telefoner vil spørge, om man gerne vil tillade overførsler når de forbinder til en enhed. Hvis man vil være ekstra sikker må man vælge ikke at tillade overførsler, når man bruger fremmede opladere."
+        "text": "De kan installere en virus på min computer",
+        "reply": "Flashdreve kan være så små, at de kunne sættes inden i et USB-kabel og inficere enheder, som de kommer i kontakt med. Sandsynligheden for at det er tilfældet her meget lille med det er ikke umuligt."
       }
     }
   },
   {
-    
-    "bodytext": "Du modtager en e-mail fra \"e-Boks.dk <eboks-dk@noreply.dk>\" klikker du på linket i mailen?",
+    "bodytext": "Du modtager en e-mail fra \"e-Boks.dk <eboks-dk@noreply.dk>\". Klikker du på linket i mailen?",
     "responses": {
       "response1": {
         "correct": "false",
         "text": "Ja",
-        "reply": "Nøglen er at kigge på mailadressen. <eboks-dk@noreply.dk> er ikke en adresse fra e-boks, men en adresse fra hjemmesiden noreply.dk, hvilket ikke nødvendigvis er en troværdig kilde. Hvis du er i tvivl, lad være med at klikke på links og log ind til e-boks på en anden måde, fx. ved at søge efter e-boks på en søgemaskine, som fx. Google."
+        "reply": "Det bedste, du kan gøre for at beskytte dig selv, er at indtaste e-Boks' hjemmeside manuelt i din browser, i stedet for at klikke på links i e-mails. På denne måde kan du være sikker på, at du er på den rigtige hjemmeside, når du logger ind på din e-Boks konto, og at dine personlige oplysninger ikke falder i de forkerte hænder."
       },
       "response2": {
         "correct": "true",
         "text": "Nej",
-        "reply": "Nøglen er at kigge på mailadressen. <eboks-dk@noreply.dk> er ikke en adresse fra e-boks, men en adresse fra hjemmesiden noreply.dk, hvilket ikke nødvendigvis er en troværdig kilde. Hvis du er i tvivl, lad være med at klikke på links og log ind til e-boks på en anden måde, fx. ved at søge efter e-boks på en søgemaskine, som fx. Google."
+        "reply": "Det bedste, du kan gøre for at beskytte dig selv, er at indtaste e-Boks' hjemmeside manuelt i din browser, i stedet for at klikke på links i e-mails. På denne måde kan du være sikker på, at du er på den rigtige hjemmeside, når du logger ind på din e-Boks konto, og at dine personlige oplysninger ikke falder i de forkerte hænder."
       }
     }
   },
   {
-    
-    "bodytext": "Hvilken af følgende påstande er sande?",
-    "responses": {
-      "response1": {
-        "correct": "false",
-        "text": "Hvis du modtager en mail fra en kollega kan du godt klikke på indholdet, sålænge du har en opdateret antivirus og spam-blocker.",
-        "reply": "Disse tiltage er gode at have med, men det kan ikke stå alene. Man skal også bruge sin sunde fornuft. Det kan være, fx. at dobbelttjekke, at afsenderens mailadresse er korrekt og at undersøge filtyperne på vedhæftede filer (fx. er .pdf, .docx som hovedregel OK, .exe er som regel ikke). Er du i tvivl kan du spørge en, som kender mere til IT end dig selv eller evt. søge på Google."
-      },
-      "response2": {
-        "correct": "true",
-        "text": "Hvis du modtager en mail fra HR, som efterspørger personlige oplysninger, bør du altid sikre dig, at vedkommende er dem de udgiver sig for at være.",
-        "reply": "Det kan eksempelvis være at dobbelttjekke afsenderens mailadresse. Skal man være ekstra sikker kan man altid lige bekræfte det med afsenderen personligt."
-      }
-    }
-  },
-  {
-    
     "bodytext": "Du er i lufthavnen og skal logge på WiFi. Hvad er mest sikkert?",
     "responses": {
       "response1": {
@@ -368,71 +355,36 @@
     }
   },
   {
-    
     "bodytext": "Du er på forretningsrejse og har kun din arbejdscomputer med. Du modtager en mail fra e-boks med et vedhæftet dokument fra Københavns Kommune, som du for nyligt har været i kontakt med. Vil du åbne filen?",
     "responses": {
       "response1": {
         "correct": "false",
         "text": "Ja",
-        "reply": []
+        "reply": "E-boks sender aldrig vedhæftede filer via e-mail. Det er en sikkerhedsforanstaltning for at beskytte mod phishing-angreb og andre former for online-svindel. Hvis du har modtaget en e-mail med en vedhæftet fil, der påstås at være fra e-boks, så vær forsigtig, da det sandsynligvis er et forsøg på svindel. Det er altid bedst at logge ind på e-boks platformen direkte og downloade dokumentet derfra for at være sikker på, at det er ægte og sikkert."
       },
       "response2": {
         "correct": "true",
         "text": "Nej",
-        "reply": []
+        "reply": "Det er vigtigt at være opmærksom på, at e-boks normalt ikke sender vedhæftninger via e-mail. Det er en sikkerhedsforanstaltning for at beskytte mod phishing-angreb og andre former for online-svindel. Hvis du har brug for at åbne et dokument fra e-boks, bør du logge ind på e-boks platformen direkte og downloade dokumentet derfra."
       }
     }
   },
   {
-    
-    "bodytext": "Hvad er den bedste måde at beskytte sig selv mod Cyber angreb?",
-    "responses": {
-      "response1": {
-        "correct": "true",
-        "text": "Kontakte din it-afdeling/it-ansvarlige og undersøge hvilke foranstaltninger de har etableret for at sikre jeres virksomhed mod cyber angreb",
-        "reply": []
-      },
-      "response2": {
-        "correct": "false",
-        "text": "Hyre forskellige eksterne it-virksomheder der hver især klarer forskellige opgaver",
-        "reply": []
-      }
-    }
-  },
-  {
-    
-    "bodytext": "Du modtager en e-mail fra \"e-Boks.dk (eboks-dk@noreply.dk)\" klikker du på linket i mailen?",
+    "bodytext": "Hvad er den bedste måde at beskytte sig selv mod cyber-angreb?",
     "responses": {
       "response1": {
         "correct": "false",
-        "text": "Ja",
-        "reply": []
+        "text": "At bede sin IT-leverandør om, at stå for IT-sikkerheden",
+        "reply": "Det er vigtigt at undgå, at dem, der leverer IT-tjenester til din virksomhed, også er dem, der skal tjekke sikkerheden efter, da dette kan skabe en interessekonflikt. Et eksternt IT-sikkerhedsfirma kan hjælpe med at identificere svagheder og foreslå forbedringer, som kan styrke din virksomheds sikkerhed."
       },
       "response2": {
-        "correct": "true",
-        "text": "Nej",
-        "reply": []
-      }
-    }
-  },
-  {
-    
-    "bodytext": "Du er på forretningsrejse og har kun din arbejdscomputer med. Du modtager en mail fra e-boks med en meddelelse om, at du har modtaget et dokument fra din kommune. Du kan tilgå dokumentet ved at logge ind på din e-boks. Hvad gør du?",
-    "responses": {
-      "response1": {
         "correct": "false",
-        "text": "Markér mailen som spam.",
-        "reply": []
-      },
-      "response2": {
-        "correct": "true",
-        "text": "Logger ind på min e-boks.",
-        "reply": []
+        "text": "Hyre et uafhængigt IT-sikkerhedsfirma",
+        "reply": "Det er vigtigt at undgå, at dem, der leverer IT-tjenester til din virksomhed, også er dem, der skal tjekke sikkerheden efter, da dette kan skabe en interessekonflikt. Et eksternt IT-sikkerhedsfirma kan hjælpe med at identificere svagheder og foreslå forbedringer, som kan styrke din virksomheds sikkerhed."
       }
     }
   },
   {
-    
     "bodytext": "Hvad er 'Botnet'?",
     "responses": {
       "response1": {
@@ -448,23 +400,21 @@
     }
   },
   {
-    
     "bodytext": "Hvad er phishing?",
     "responses": {
       "response1": {
         "correct": "false",
         "text": "Et Man-in-the-middle angreb",
-        "reply": []
+        "reply": "Et Man-in-the-middle angreb er, når en angriber aflytter og/eller manipulerer kommunikation mellem to parter. Phishing er derimod en metode, hvor angribere forsøger at narre brugere til at afsløre følsomme oplysninger eller udføre handlinger ved at udgive sig for at være en troværdig kilde."
       },
       "response2": {
         "correct": "true",
-        "text": "Et forsøg på at franarre information",
-        "reply": []
+        "text": "En metode til at få en bruger til at gøre noget",
+        "reply": "Phishing er en teknik, hvor angribere forsøger at narre brugere til at afsløre personlige oplysninger, såsom adgangskoder eller kreditkortoplysninger, eller udføre handlinger, som kan kompromittere deres sikkerhed. Dette gøres typisk gennem e-mails, beskeder eller websteder, der efterligner velkendte og troværdige organisationer."
       }
     }
   },
   {
-    
     "bodytext": "Hvad hedder følgende hacking metode: En hacker låser en bruger ude af deres computer og krypterer deres data og holder det som gidsel, indtil offeret går med til at betale det påkrævede beløb.",
     "responses": {
       "response1": {
@@ -480,7 +430,6 @@
     }
   },
   {
-    
     "bodytext": "Hvad kalder man det interaktive stemmesvar system, der bruges til at genskabe en legitim kopi af en bank eller en anden institutions interaktive stemmesvar, hvor offeret bliver bedt til at ringe til for at “bekræfte” oplysninger?",
     "responses": {
       "response1": {
@@ -496,7 +445,6 @@
     }
   },
   {
-    
     "bodytext": "Sandt eller falsk: tech support scams er som regel målrettet større virksomheder",
     "responses": {
       "response1": {
@@ -512,7 +460,6 @@
     }
   },
   {
-    
     "bodytext": "Sandt eller falsk: Kun medarbejdere med adgang til sensitive data skal trænes i fysisk sikkerhed af filer og enheder.",
     "responses": {
       "response1": {
@@ -528,7 +475,6 @@
     }
   },
   {
-    
     "bodytext": "Sandt eller falsk: at sætte sine software op til at opdatere automatisk er en måde at sikre sin virksomhed mod ransomware angreb?",
     "responses": {
       "response1": {
@@ -544,7 +490,6 @@
     }
   },
   {
-    
     "bodytext": "Sandt eller falsk: du kan undgå tech support scam ved udelukkende at modtage opkald fra etablerede it-support-firmaer.",
     "responses": {
       "response1": {
@@ -571,6 +516,96 @@
         "correct": "true",
         "text": "Falsk",
         "reply": []
+      }
+    }
+  },
+  {
+    "bodytext": "Du er kommet til at åbne en phishing e-mail. Hvad gør du?",
+    "responses": {
+      "response1": {
+        "correct": "true",
+        "text": "Lukker mailen og sletter den",
+        "reply": "At åbne en phishingmail er normalt ikke nok til at lukke hackere ind, så længe man ikke har trykket på et link eller åbnet en vedhæfning."
+      },
+      "response2": {
+        "correct": "false",
+        "text": "Reformaterer harddisken",
+        "reply": "Hvis du ved et uheld åbner en phishing-e-mail, skal du bare lukke og slette den. Det er normalt ikke nok til at hackere kan få adgang til dine oplysninger. Reformatering af harddisken er normalt ikke nødvendigt, medmindre din computer allerede er inficeret med malware."
+      }
+    }
+  },
+  {
+    "bodytext": "Du er kommet til at åbne en vedhæftning i phishing e-mail. Hvad gør du?",
+    "responses": {
+      "response1": {
+        "correct": "false",
+        "text": "Afbryder netværksforbindelsen, kør virusscan og skift alle passwords omgående",
+        "reply": "Hvis du ved et uheld har åbnet en vedhæftet fil i en phishing-e-mail, kan det være en fin idé at køre en virusskcan, men at skifte alle dine adgangskoder og afbryde netværksforbindelsen kan være i overkanten.\nNogle kan begynde at gå i panik i sådan en situation. Det kan være en god idé at tage et øjeblik til at trække vejret og så række ud til en IT-kyndig, som kan rådgive dig."
+      },
+      "response2": {
+        "correct": "true",
+        "text": "Venter med at gøre noget, til jeg har talt med en IT-sikkerhedsekspert",
+        "reply": "At kontakte en IT-kyndig for at få rådgivning er et klogt skridt, især hvis du er usikker på, hvad du skal gøre. En IT-sikkerhedsekspert kan give dig råd om, hvad du skal gøre for at beskytte din computer og dine data mod eventuelle trusler.\nDet kan også være en god idé at ændre dine adgangskoder, hvis du tror, at de kan være blevet kompromitteret. Men det er vigtigt at bevare roen og ikke nødvendigvis træffe beslutninger på egen hånd, da det kan føre til yderligere problemer."
+      }
+    }
+  },
+  {
+    "bodytext": "Du er it-ansvarlig og læser om en nyfunden sårbarhed, som rammer Java. Hvad gør I?",
+    "responses": {
+      "response1": {
+        "correct": "false",
+        "text": "Luk hele netværket ned, indtil I har et overblik",
+        "reply": "Dette kan være en overreaktion og kan forstyrre virksomhedens drift. Det er vigtigere at fokusere på at opdatere Java og sikre, at systemerne er beskyttet mod sårbarheden."
+      },
+      "response2": {
+        "correct": "true",
+        "text": "Opdaterer Java på alle firmaets PC'er",
+        "reply": "Dette er den mest effektive løsning, da opdateringer ofte indeholder rettelser til kendte sårbarheder."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "Opdaterer antivirtussen på firmaets PC'er",
+        "reply": "Selvom opdatering af antivirus-software er en god praksis, vil det ikke nødvendigvis beskytte mod en sårbarhed i Java. Fokusér på at opdatere Java for at imødegå denne specifikke trussel."
+      }
+    }
+  },
+  {
+    "bodytext": "Hvilken metode ville være mest effektiv til at beskytte dine adgangskoder mod uautoriseret adgang?",
+    "responses": {
+      "response1": {
+        "correct": "false",
+        "text": "Skrive dine adgangskoder ned på et papir og gemme det under tastaturet",
+        "reply": "Dette er ikke en sikker metode, da nogen med fysisk adgang til dit arbejdsområde nemt kan finde og bruge dine adgangskoder."
+      },
+      "response2": {
+        "correct": "true",
+        "text": "Bruge en pålidelig password-manager til at generere og opbevare komplekse adgangskoder",
+        "reply": "En password-manager kan hjælpe dig med at opbevare og generere stærke, unikke adgangskoder, hvilket øger din IT-sikkerhed."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "Bruge den samme enkle adgangskode på alle dine konti for at gøre det nemmere at huske",
+        "reply": "Dette er en usikker praksis, da en hacker, der får adgang til én konto, potentielt kan få adgang til alle dine konti."
+      }
+    }
+  },
+  {
+    "bodytext": "Hvordan kan du bedst beskytte dine enheder mod malware?",
+    "responses": {
+      "response1": {
+        "correct": "false",
+        "text": "Kun åbne e-mails fra personer, du kender personligt",
+        "reply": "Selvom det er godt at være forsigtig med e-mails, beskytter det ikke nødvendigvis dine enheder mod malware, da trusler også kan komme fra kompromitterede websteder eller inficerede filer."
+      },
+      "response2": {
+        "correct": "true",
+        "text": "Installere og opdatere antivirus-software samt holde dit operativsystem og programmer opdateret",
+        "reply": "Opdateret antivirus-software og regelmæssige opdateringer af dit operativsystem og programmer er vigtige skridt for at beskytte dine enheder mod malware."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "Undgå at bruge internettet og kun arbejde offline",
+        "reply": "Dette er ikke en praktisk løsning i dag, da mange arbejdsopgaver og tjenester kræver internetadgang. At følge god IT-sikkerhedspraksis og holde software opdateret er mere effektivt."
       }
     }
   }
