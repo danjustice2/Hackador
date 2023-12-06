@@ -200,21 +200,6 @@
     }
   },
   {
-    "bodytext": "Du modtager en e-mail fra e-boks, hvor det står, at du har modtaget et dokument fra din kommune. Hvordan vil du tilgå dokumentet?",
-    "responses": {
-      "response1": {
-        "correct": "false",
-        "text": "Markér mailen som spam.",
-        "reply": "Det er ikke nødvendigvis en god idé at markere mailen som spam, da det kun vil flytte mailen til spam-mappen og ikke nødvendigvis forhindre, at svindlere fortsætter med at sende lignende e-mails i fremtiden. Det er bedre at logge ind på din e-boks direkte fra platformens hjemmeside for at sikre, at dokumentet er legitimt og beskytte dig mod online-svindel."
-      },
-      "response2": {
-        "correct": "true",
-        "text": "Logge ind på min e-boks.",
-        "reply": "Den bedste praksis for at tilgå dokumenter fra e-boks er at logge ind direkte på platformens hjemmeside for at sikre, at dokumentet er legitimt og beskytte dig mod online-svindel. På denne måde kan du også sikre, at du altid har adgang til din e-boks og dens indhold, uanset hvor du er og hvilken enhed du bruger."
-      }
-    }
-  },
-  {
     "bodytext": "Hvad er Brute-force?",
     "responses": {
       "response1": {
@@ -261,21 +246,6 @@
         "correct": "true",
         "text": "Falsk",
         "reply": "Imens kryptering kan i nogen grad hjælpe med at beskytte imod cyber-angreb, er den ikke til nogen hjælp i at opdage at et angreb er sket."
-      }
-    }
-  },
-  {
-    "bodytext": "Sandt eller falsk: Hvis du bliver udsat for et ransomware-angreb, er det første du skal gøre, er at betale hackerne? (Et ransomware-angreb e)",
-    "responses": {
-      "response1": {
-        "correct": "false",
-        "text": "Sandt",
-        "reply": "Det kan være meget stressende at være udsat for ransomware. At betale løsesummen er dog noget af det sidste man skal gøre. Det anbefales at it-specialister bliver tilkaldt snarest muligt efter at angrebet er opdaget: så er oddsene for at kunne fjerne ransomwaren allerhøjest. Der har dog været situationer, hvor virksomheder er endt med at skulle betale løsesummen for at redde deres data. Derfor er det selvfølgelig bedst hvis man kan undgå at angrebet sker i første omgang."
-      },
-      "response2": {
-        "correct": "true",
-        "text": "Falsk",
-        "reply": "Når ransomware bliver opdaget skal it-professionelle tilkaldes snarest muligt, da det giver de bedste odds for at genskabe ens data uden at betale løsesummen. Oddsene er nemlig ofte imod dig, når det har med ransomware at gøre. Der har været tilfælde hvor selv store virksomheder er blevet nødsaget til at betale en løsesum for at redde deres kritiske data. Derfor er en sikreste løsning som altid at undgå at blive til et offer i første omgang."
       }
     }
   },
