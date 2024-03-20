@@ -578,5 +578,85 @@
         "reply": "Dette er ikke en praktisk løsning i dag, da mange arbejdsopgaver og tjenester kræver internetadgang. At følge god IT-sikkerhedspraksis og holde software opdateret er mere effektivt."
       }
     }
-  }
+  },
+   {
+    "bodytext": "Hvad er formålet med penetrationstestning?",
+    "responses": {
+      "response1": {
+        "correct": "false",
+        "text": "At angribe et system for at forårsage skade",
+        "reply": "Pentesting involverer simulerede angreb for at vurdere sikkerhedsniveauet og identificere områder, der skal forbedres i virksomhedens IT systemer."
+      },
+      "response2": {
+        "correct": "true",
+        "text": "At evaluere og identificere sårbarheder i et system",
+        "reply": "Pentesting involverer simulerede angreb for at vurdere sikkerhedsniveauet og identificere områder, der skal forbedres i virksomhedens IT systemer."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "At oprette sikkerhedskopier af data",
+        "reply": "Pentesting involverer simulerede angreb for at vurdere sikkerhedsniveauet og identificere områder, der skal forbedres i virksomhedens IT systemer."
+      }
+    }
+  },
+     {
+    "bodytext": "Hvad er formålet med en 'red team' hacker?",
+    "responses": {
+      "response1": {
+        "correct": "true",
+        "text": "At angribe systemer for at teste forsvarsevner",
+        "reply": "En 'red team' hacker udfører simuleringer af angreb for at evaluere og forbedre sikkerhedsforsvar i organisationer."
+      },
+      "response2": {
+        "correct": "false",
+        "text": "At udvikler sikkerhedspolitikker for organisationer",
+        "reply": "En 'red team' hacker udfører simuleringer af angreb for at evaluere og forbedre sikkerhedsforsvar i organisationer."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "At samarbejder med lovgivende organer for at udforme cyberlove",
+        "reply": "En 'red team' hacker udfører simuleringer af angreb for at evaluere og forbedre sikkerhedsforsvar i organisationer."
+      }
+    }
+  },
+       {
+    "bodytext": "Hvilke nøgleelementer bør inkluderes i udviklingen af en effektiv sikkerhedspolitik for en organisation?",
+    "responses": {
+      "response1": {
+        "correct": "false",
+        "text": "Implementering af antivirussoftware og firewall",
+        "reply": "En effektiv sikkerhedspolitik bør inkludere klare retningslinjer for, hvordan ansvarsområder og adgangsrettigheder administreres i organisationen. Dette hjælper med at sikre, at adgang til systemer og data er veldefineret og kontrolleret, hvilket er afgørende for informationsbeskyttelse."
+      },
+      "response2": {
+        "correct": "true",
+        "text": "Definition af klare ansvarsområder og adgangsrettigheder",
+        "reply": "En effektiv sikkerhedspolitik bør inkludere klare retningslinjer for, hvordan ansvarsområder og adgangsrettigheder administreres i organisationen. Dette hjælper med at sikre, at adgang til systemer og data er veldefineret og kontrolleret, hvilket er afgørende for informationsbeskyttelse."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "Anvendelse af komplekse krypteringsalgoritmer på alle systemer",
+        "reply": "En effektiv sikkerhedspolitik bør inkludere klare retningslinjer for, hvordan ansvarsområder og adgangsrettigheder administreres i organisationen. Dette hjælper med at sikre, at adgang til systemer og data er veldefineret og kontrolleret, hvilket er afgørende for informationsbeskyttelse."
+      }
+    }
+  },
+  {
+    "bodytext": "Du opdager, at der er blevet installeret ukendt software på din arbejdscomputer uden din tilladelse. Hvad gør du?",
+    "responses": {
+      "response1": {
+        "correct": "false",
+        "text": "Afinstallerer softwaren med det samme",
+        "reply": "Uautoriseret softwareinstallation kan være tegn på et sikkerhedsbrud. Ved at rapportere det til IT kan eksperterne undersøge og træffe de nødvendige foranstaltninger."
+      },
+      "response2": {
+        "correct": "true",
+        "text": "Rapporterer straks hændelsen til IT-support",
+        "reply": "Uautoriseret softwareinstallation kan være tegn på et sikkerhedsbrud. Ved at rapportere det til IT kan eksperterne undersøge og træffe de nødvendige foranstaltninger."
+      },
+      "response3": {
+        "correct": "false",
+        "text": "Jeg går ud fra at det er noget virksomheden har installeret for alle medarbejdere",
+        "reply": "Uautoriseret softwareinstallation kan være tegn på et sikkerhedsbrud. Ved at rapportere det til IT kan eksperterne undersøge og træffe de nødvendige foranstaltninger."
+      }
+    }
+  },
 ]
